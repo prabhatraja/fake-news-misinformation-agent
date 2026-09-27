@@ -701,8 +701,6 @@ This prevents the system from treating the existence of a claim as evidence that
 **Peri Prabhat Raja**  
 M.Tech Data Science & Artificial Intelligence  
 PES University  
-Student ID: **PES2PGE24DS192**
-
 ---
 
 ## Academic Use
