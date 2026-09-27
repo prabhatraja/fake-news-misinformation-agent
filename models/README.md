@@ -64,6 +64,18 @@ The retained training script writes to:
 ```text
 models/transformer/distilbert_isot/
 ```
+## Pretrained DistilBERT 512 Model
+
+The final trained DistilBERT 512 classifier is hosted separately on Hugging Face because the model weights are too large for the main GitHub repository.
+
+**Hugging Face model:**
+
+https://huggingface.co/prabhatraja445/fake-news-misinformation-distilbert-512
+
+The project expects the model under:
+
+```text
+models/transformer/distilbert_isot_full_512/
 
 ## Embedding model
 
