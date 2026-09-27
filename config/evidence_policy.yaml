@@ -1,0 +1,435 @@
+version: "1.0"
+
+source_trust:
+  default_trust: 0.60
+  unknown_domain_trust: 0.35
+
+  domain_suffix_scores:
+    ".gov": 0.90
+    ".gov.in": 0.90
+    ".nic.in": 0.86
+    ".edu": 0.80
+
+  trusted_fact_check_domains:
+    trust_score: 0.85
+    domains:
+      - politifact.com
+      - snopes.com
+      - factcheck.org
+      - apnews.com
+      - reuters.com
+      - bbc.com
+      - fullfact.org
+      - afp.com
+      - afpcheck.com
+      - rappler.com
+
+  official_domains:
+    trust_score: 0.90
+    domains:
+      - who.int
+      - cdc.gov
+      - nih.gov
+      - nasa.gov
+      - whitehouse.gov
+      - gov.uk
+      - india.gov.in
+      - pib.gov.in
+      - isro.gov.in
+      - eci.gov.in
+      - mohfw.gov.in
+      - rbi.org.in
+      - un.org
+      - worldbank.org
+      - paho.org
+
+  authority_domains:
+    trust_score: 0.78
+    domains:
+      - britannica.com
+      - history.com
+      - nationalgeographic.com
+      - smithsonianmag.com
+      - mayoclinic.org
+      - clevelandclinic.org
+
+  low_trust_domains:
+    trust_score: 0.25
+    domains:
+      - facebook.com
+      - x.com
+      - twitter.com
+      - instagram.com
+      - tiktok.com
+      - reddit.com
+      - quora.com
+      - medium.com
+      - blogspot.com
+      - wordpress.com
+
+stance_policy:
+  minimum_overlap_count: 2
+  minimum_overlap_ratio: 0.40
+  assertion_overlap_count: 2
+  assertion_overlap_ratio: 0.60
+
+  stopwords:
+    - a
+    - an
+    - the
+    - and
+    - or
+    - but
+    - if
+    - then
+    - than
+    - that
+    - this
+    - these
+    - those
+    - is
+    - are
+    - was
+    - were
+    - be
+    - been
+    - being
+    - to
+    - of
+    - for
+    - from
+    - with
+    - without
+    - by
+    - as
+    - at
+    - it
+    - its
+    - his
+    - her
+    - their
+    - our
+    - your
+    - you
+    - we
+    - they
+    - he
+    - she
+    - them
+    - him
+    - who
+    - what
+    - when
+    - where
+    - why
+    - how
+    - says
+    - said
+    - say
+    - has
+    - have
+    - had
+    - will
+    - would
+    - could
+    - should
+    - about
+    - into
+    - over
+    - under
+    - after
+    - before
+    - during
+    - more
+    - most
+    - less
+    - least
+    - all
+    - any
+    - claim
+    - claims
+    - claimed
+    - article
+    - post
+    - video
+    - image
+    - images
+    - social
+    - media
+    - source
+    - credible
+    - fact
+    - check
+
+  negation_cues:
+    - not
+    - no
+    - never
+    - none
+    - cannot
+    - can't
+    - cant
+    - doesn't
+    - doesnt
+    - didn't
+    - didnt
+    - isn't
+    - isnt
+    - aren't
+    - arent
+    - won't
+    - wont
+    - without
+
+  neutral_verdict_cues:
+    - partly true
+    - half true
+    - half-true
+    - mostly true
+    - mostly-true
+    - needs context
+    - missing context
+    - partially accurate
+    - partly accurate
+    - mixture
+    - mixed
+
+  refute_verdict_cues:
+    - false
+    - fake
+    - hoax
+    - misleading
+    - not true
+    - no evidence
+    - without evidence
+    - baseless
+    - debunked
+    - fabricated
+    - doctored
+    - incorrect
+    - wrong
+    - pants on fire
+    - pants-fire
+    - falsely claims
+    - false claim
+    - falsely claimed
+    - unfounded
+    - conspiracy theory
+    - myth
+
+  support_verdict_cues:
+    - true
+    - accurate
+    - correct
+    - confirmed
+    - verified
+    - official
+    - authentic
+    - valid
+    - substantiated
+
+  explicit_refute_patterns:
+    - we rate this false
+    - we rate this claim false
+    - rated false
+    - rating: false
+    - verdict false
+    - verdict: false
+    - is false
+    - is fake
+    - is a hoax
+    - is fabricated
+    - is doctored
+    - no evidence
+    - without evidence
+    - baseless claim
+    - debunked
+    - falsely claims
+    - false claim
+    - falsely claimed
+    - unfounded claim
+    - unfounded conspiracy
+    - conspiracy theory
+
+  explicit_support_patterns:
+    - we rate this true
+    - we rate this claim true
+    - rated true
+    - rating: true
+    - verdict true
+    - verdict: true
+    - is true
+    - is accurate
+    - is correct
+    - confirmed
+    - verified
+    - official records show
+    - official data show
+    - authentic
+
+  assertion_cues:
+    - located
+    - situated
+    - based
+    - found
+    - born
+    - contains
+    - contain
+    - included
+    - includes
+    - made
+    - built
+    - created
+    - announced
+    - released
+    - confirmed
+    - verified
+    - reported
+    - according
+    - official
+    - records
+    - data
+    - evidence
+
+  relation_groups:
+    birth:
+      query:
+        - born
+        - birth
+        - birthplace
+      evidence:
+        - born
+        - birth
+        - birthplace
+        - certificate
+        - record
+        - records
+
+    location:
+      query:
+        - located
+        - location
+        - place
+        - situated
+        - based
+        - found
+      evidence:
+        - located
+        - location
+        - situated
+        - based
+        - found
+        - within
+        - address
+
+    containment:
+      query:
+        - contain
+        - contains
+        - contained
+        - include
+        - includes
+        - included
+        - have
+        - has
+      evidence:
+        - contain
+        - contains
+        - contained
+        - include
+        - includes
+        - included
+        - ingredient
+        - ingredients
+        - have
+        - has
+
+    tracking:
+      query:
+        - track
+        - tracks
+        - tracked
+        - tracking
+        - trace
+        - tracing
+      evidence:
+        - track
+        - tracks
+        - tracked
+        - tracking
+        - trace
+        - tracing
+        - surveillance
+        - monitor
+
+    media_authenticity:
+      query:
+        - filmed
+        - film
+        - photo
+        - image
+        - video
+        - audio
+        - clip
+        - recording
+        - fake
+        - faked
+      evidence:
+        - filmed
+        - film
+        - photo
+        - image
+        - video
+        - audio
+        - clip
+        - recording
+        - authentic
+        - generated
+        - edited
+        - doctored
+
+    causality:
+      query:
+        - cause
+        - causes
+        - caused
+        - lead
+        - leads
+        - led
+        - because
+      evidence:
+        - cause
+        - causes
+        - caused
+        - lead
+        - leads
+        - led
+        - because
+        - linked
+        - associated
+
+risk_policy:
+  minimum_evidence_relevance: 0.50
+  strong_evidence_relevance: 0.65
+  minimum_aligned_evidence_count: 2
+  high_classifier_confidence: 0.85
+
+  claim_like_inputs:
+    - claim
+    - headline
+  suspicious_cues:
+    - breaking
+    - shocking
+    - secret
+    - exposed
+    - anonymous
+    - hidden
+    - miracle
+    - guaranteed
+    - cure
+    - conspiracy
+    - hoax
+    - leaked
+    - cover up
+    - cover-up
+    - deep state

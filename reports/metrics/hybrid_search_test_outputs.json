@@ -1,0 +1,607 @@
+{
+    "generated_at": "2026-07-06T08:53:51.079724",
+    "api_url": "http://127.0.0.1:8000/api/v1/predict",
+    "expected_model": "Fine-tuned DistilBERT 512",
+    "test_type": "hybrid_live_search_smoke_test",
+    "total_cases": 8,
+    "passed_cases": 8,
+    "failed_cases": 0,
+    "test_outputs": [
+        {
+            "case_id": "HYB01_OBAMA_HAWAII",
+            "description": "Known factual claim that should improve with live web evidence",
+            "status": "passed",
+            "input_text": "Barack Obama was born in Hawaii.",
+            "input_type": "claim",
+            "allowed_final_labels": [
+                "Likely Real"
+            ],
+            "actual_final_label": "Likely Real",
+            "allowed_risk_labels": [
+                "Low Risk",
+                "Very Low Risk"
+            ],
+            "actual_risk_label": "Low Risk",
+            "model_used": "Fine-tuned DistilBERT 512",
+            "model_ok": true,
+            "label_ok": true,
+            "risk_ok": true,
+            "require_live_web_evidence": true,
+            "live_web_evidence_count": 5,
+            "live_web_ok": true,
+            "risk_score": 0.3,
+            "classifier_confidence": 0.9999,
+            "classifier_probabilities": {
+                "real": 0.0001,
+                "fake": 0.9999
+            },
+            "raw_class": 1,
+            "evidence_summary": {
+                "retrieved_count": 5,
+                "usable_evidence_count": 5,
+                "weak_evidence_count": 0,
+                "supports_count": 4,
+                "refutes_count": 0,
+                "not_enough_info_count": 1,
+                "unknown_count": 0,
+                "strong_supports_count": 4,
+                "strong_refutes_count": 0,
+                "support_max_relevance": 0.7931,
+                "refute_max_relevance": 0.0,
+                "not_enough_info_max_relevance": 0.687,
+                "top_evidence_label": "SUPPORTS",
+                "top_relevance_score": 0.7849,
+                "minimum_relevance_required": 0.5,
+                "strong_evidence_relevance_required": 0.65,
+                "minimum_aligned_evidence_count": 2,
+                "has_strong_support": true,
+                "has_strong_refute": false
+            },
+            "top_evidence": [
+                {
+                    "source": "factcheck.org",
+                    "text": "# Born in the U.S.A. The truth about Obama's birth certificate. In June, the Obama campaign released a digitally scanned image of his birth certificate to quell speculative charges that he might not be a natural-born citizen. We conclude that it meets all of the requirements from the State Department for proving U.S. citizenship. *Update, Nov. 1: The director of Hawaii’s Department of Health confirmed Oct. 31 that Obama was born in Honolulu.*. *Fukino said she has “personally seen and verified that the Hawaii State Department of Health has Sen. Obama’s original birth certificate on record in accordance with state policies and procedures.”*. *Update, April 27, 2011: The White House released the long-form version of President Barack Obama’s birth certificate, confirming (yet again) that he was born in the United States.* *The Hawaii Department of Health made an exception in Obama’s case and issued copies of the “Certificate of Live Birth.”*.",
+                    "relevance_score": 0.7849,
+                    "evidence_label": "SUPPORTS"
+                },
+                {
+                    "source": "bbc.com",
+                    "text": "# The birth of the Obama 'birther' conspiracy. **Republican Donald Trump asserted that Democrat Hillary Clinton and her campaign team first raised questions about Barack Obama's birthplace in 2008 - and that he was the man who settled the issue in 2011.**. As a preface to this latest turn in the Obama \"birther\" row, it should be noted that the location of Mr Obama's birth is generally considered irrelevant to whether Mr Obama is eligible to serve as US president. As long as he has one parent who was a US citizen, as Mr Obama's Kansas-born mother was, he is considered by the US government to be a \"natural born citizen\". In June 2008 the Obama campaign released a photocopy of his short-form \"certificate of live birth\" showing that he was born in Honolulu, Hawaii, on 4 August, 1961. This handout image provided by the White House shows a copy of the long form of President Barack Obama\"s birth certificate from Hawaii.",
+                    "relevance_score": 0.7321,
+                    "evidence_label": "SUPPORTS"
+                },
+                {
+                    "source": "publicintegrity.org",
+                    "text": "Obama's long-form birth certificate. President Barack Obama released the long-form version of his birth certificate, yet another piece of concrete evidence that shows he was born in the United States. And, in fact, FactCheck.org staffers handled, examined and photographed the “certification of live birth.” That short-form document is what Hawaii releases to citizens who request a copy of their birth certificate, and we confirmed that it meets legal requirements for proving citizenship and obtaining a passport. And on top of that, Chiyome Fukino, the then-director of Hawaii’s Department of Health, released a statement in 2008, saying she had seen the original birth certificate on file verifying that Obama was born in Hawaii. An attorney for Obama, Judith Corley, wrote to the Hawaii Department of Health on April 22, requesting “a waiver of the Department of Health’s policy, so that my client can obtain two certified copies of his original, ‘long form’ birth certificate.",
+                    "relevance_score": 0.7931,
+                    "evidence_label": "SUPPORTS"
+                }
+            ],
+            "explanation": "The final label is 'Likely Real'. The classifier label was 'Likely Fake' with confidence 0.9999. The current risk level is 'Low Risk'. This prediction was generated using the Fine-tuned DistilBERT 512. At this stage, the classifier found patterns closer to fake-news articles seen in the ISOT training dataset. However, the evidence-aware decision layer found more usable SUPPORTS evidence than REFUTES evidence, so the final label was marked Likely Real. The retrieved evidence summary contains 4 usable SUPPORTS, 0 usable REFUTES, and 1 usable NOT_ENOUGH_INFO items. There are 5 usable evidence items and 0 weak matches. The top evidence relevance score is 0.7849. Displayed terms are simple content terms for review. Transformer-specific attribution can be added later using SHAP or attention-based analysis. The SLM-assisted verifier reviewed the retrieved evidence and returned stance 'SUPPORTS' with confidence 0.95. Verifier reason: Evidence confirms Obama was born in Honolulu, Hawaii, via official documents and statements. The final result should be treated as a misinformation risk assessment, not as absolute truth.",
+            "error": null
+        },
+        {
+            "case_id": "HYB02_EIFFEL_BERLIN",
+            "description": "False location claim; should not be marked Likely Real without strong evidence",
+            "status": "passed",
+            "input_text": "The Eiffel Tower is located in Berlin.",
+            "input_type": "claim",
+            "allowed_final_labels": [
+                "Uncertain",
+                "Likely Fake",
+                "Misleading"
+            ],
+            "actual_final_label": "Likely Fake",
+            "allowed_risk_labels": [
+                "Medium Risk",
+                "High Risk"
+            ],
+            "actual_risk_label": "Medium Risk",
+            "model_used": "Fine-tuned DistilBERT 512",
+            "model_ok": true,
+            "label_ok": true,
+            "risk_ok": true,
+            "require_live_web_evidence": false,
+            "live_web_evidence_count": 5,
+            "live_web_ok": true,
+            "risk_score": 0.65,
+            "classifier_confidence": 0.5346,
+            "classifier_probabilities": {
+                "real": 0.5346,
+                "fake": 0.4654
+            },
+            "raw_class": 0,
+            "evidence_summary": {
+                "retrieved_count": 5,
+                "usable_evidence_count": 5,
+                "weak_evidence_count": 0,
+                "supports_count": 2,
+                "refutes_count": 1,
+                "not_enough_info_count": 2,
+                "unknown_count": 0,
+                "strong_supports_count": 0,
+                "strong_refutes_count": 0,
+                "support_max_relevance": 0.62,
+                "refute_max_relevance": 0.62,
+                "not_enough_info_max_relevance": 0.62,
+                "top_evidence_label": "NOT_ENOUGH_INFO",
+                "top_relevance_score": 0.62,
+                "minimum_relevance_required": 0.5,
+                "strong_evidence_relevance_required": 0.65,
+                "minimum_aligned_evidence_count": 2,
+                "has_strong_support": false,
+                "has_strong_refute": false
+            },
+            "top_evidence": [
+                {
+                    "source": "en.wikipedia.org",
+                    "text": "It is named after the engineer Gustave Eiffel, whose company designed and built the tower from 1887 to 1889. Eiffel Tower. Tour Eiffel (French).",
+                    "relevance_score": 0.62,
+                    "evidence_label": "NOT_ENOUGH_INFO"
+                },
+                {
+                    "source": "toureiffel.paris",
+                    "text": "The Eiffel Tower was built by Gustave Eiffel for the 1889 Exposition Universelle, which was to celebrate the 100th year anniversary of the French Revolution.",
+                    "relevance_score": 0.62,
+                    "evidence_label": "NOT_ENOUGH_INFO"
+                },
+                {
+                    "source": "triviaquestion.ca",
+                    "text": "Is The Eiffel Tower located in Berlin, Germany? - Trivia Question ... ### #1. Is The Eiffel Tower located in Berlin, Germany? ... Correct Answer: The Eiffel Tower is located in Paris, France. ... ## Is The Eiffel Tower located in Berlin, Germany?",
+                    "relevance_score": 0.62,
+                    "evidence_label": "SUPPORTS"
+                }
+            ],
+            "explanation": "The final label is 'Likely Fake'. The classifier label was 'Likely Real' with confidence 0.5346. The current risk level is 'Medium Risk'. This prediction was generated using the Fine-tuned DistilBERT 512. At this stage, the classifier found patterns closer to real-news articles seen in the ISOT training dataset. The final label was produced by combining the classifier output with the retrieved evidence quality. The retrieved evidence summary contains 2 usable SUPPORTS, 1 usable REFUTES, and 2 usable NOT_ENOUGH_INFO items. There are 5 usable evidence items and 0 weak matches. The top evidence relevance score is 0.62. Displayed terms are simple content terms for review. Transformer-specific attribution can be added later using SHAP or attention-based analysis. The SLM-assisted verifier reviewed the retrieved evidence and returned stance 'REFUTES' with confidence 0.95. Verifier reason: Evidence states the tower is in Paris, France, contradicting the claim it is in Berlin. The final result should be treated as a misinformation risk assessment, not as absolute truth.",
+            "error": null
+        },
+        {
+            "case_id": "HYB03_EIFFEL_PARIS",
+            "description": "Simple factual location claim",
+            "status": "passed",
+            "input_text": "The Eiffel Tower is located in Paris.",
+            "input_type": "claim",
+            "allowed_final_labels": [
+                "Likely Real",
+                "Uncertain"
+            ],
+            "actual_final_label": "Likely Real",
+            "allowed_risk_labels": [
+                "Very Low Risk",
+                "Low Risk",
+                "Medium Risk"
+            ],
+            "actual_risk_label": "Low Risk",
+            "model_used": "Fine-tuned DistilBERT 512",
+            "model_ok": true,
+            "label_ok": true,
+            "risk_ok": true,
+            "require_live_web_evidence": false,
+            "live_web_evidence_count": 5,
+            "live_web_ok": true,
+            "risk_score": 0.45,
+            "classifier_confidence": 0.636,
+            "classifier_probabilities": {
+                "real": 0.364,
+                "fake": 0.636
+            },
+            "raw_class": 1,
+            "evidence_summary": {
+                "retrieved_count": 5,
+                "usable_evidence_count": 4,
+                "weak_evidence_count": 1,
+                "supports_count": 2,
+                "refutes_count": 0,
+                "not_enough_info_count": 2,
+                "unknown_count": 0,
+                "strong_supports_count": 0,
+                "strong_refutes_count": 0,
+                "support_max_relevance": 0.62,
+                "refute_max_relevance": 0.0,
+                "not_enough_info_max_relevance": 0.623,
+                "top_evidence_label": "NOT_ENOUGH_INFO",
+                "top_relevance_score": 0.623,
+                "minimum_relevance_required": 0.5,
+                "strong_evidence_relevance_required": 0.65,
+                "minimum_aligned_evidence_count": 2,
+                "has_strong_support": false,
+                "has_strong_refute": false
+            },
+            "top_evidence": [
+                {
+                    "source": "rappler.com",
+                    "text": "# FACT CHECK: Images of Eiffel Tower on fire are AI-generated. **Claim:** Images circulating on social media show the Eiffel Tower in Paris, France, on fire. Claims that the iconic Paris landmark was burning have also spread on Filipino social media, with several users believing the incident to be real. **The bottom line:** Using AI detectors, the images have been determined to be 97.42% machine-generated. **AI and disinformation:** Media watchdogs have long sounded the alarm over the impact of artificial intelligence on the spread of disinformation at scale. In an article by the New York Times, Gordon Crovitz, co-chief executive of NewsGuard, a company that tracks online misinformation, said, “Crafting a new false narrative can now be done at dramatic scale, and much more frequently – it’s like having AI agents contributing to disinformation.”. Rappler has already published several fact-checks on AI-generated disinformation:. This fact check was reviewed by a member of Rappler’s research team and a senior editor. #### Fact checks on AI-generated content.",
+                    "relevance_score": 0.623,
+                    "evidence_label": "NOT_ENOUGH_INFO"
+                },
+                {
+                    "source": "britannica.com",
+                    "text": "# Eiffel Tower. When completed, the Eiffel Tower served as the entrance gateway to the exposition. The Eiffel Tower was initially built to serve as the entrance gateway to the International Exposition of 1889 as well as a testament to French industrial ingenuity. Gustave Eiffel used his advanced knowledge of the behaviour of metal arch and metal truss forms under loading to design a light and airy but strong structure that presaged a revolution in civil engineering and architectural design. Situated on the “Left Bank,” meaning it is to the south of the Seine River, the storied 7th arrondissement neighbourhood in Paris is home to many other famous tourist attractions, such as the Musée d’Orsay and the Rodin Museum. Take in a top to bottom look at Paris's Eiffel Tower commissioned for the International Exposition of 1889. Take in a top to bottom look at Paris's Eiffel Tower commissioned for the International Exposition of 1889Eiffel Tower, Paris.",
+                    "relevance_score": 0.5949,
+                    "evidence_label": "SUPPORTS"
+                },
+                {
+                    "source": "reuters.com",
+                    "text": "Exclusive news, data and analytics for financial market professionals Learn more about Refinitiv. ## Browse World. Image 1: Reuters Fact Check logo. The image, opens new tab shows the Parisian landmark on fire with plumes of smoke billowing from the structure. Livestreams, opens new tabof the landmark, opens new tab, however, show it standing upright with no fire damage as of Jan. 18, at the time of writing. There is no notice of a fire on the landmark’s official website, opens new tab or social, opens new tabmedia, opens new tabchannels, opens new tab. Our Standards: The Thomson Reuters Trust Principles., opens new tab. * July 1, 2026Fact Check categoryFact Check: Counting video not evidence of fraud in Makerfield by-election. * Fact Check categoryFact Check: Counting video not evidence of fraud in Makerfield by-electionJuly 1, 2026. * About Reuters, opens new tab. * Media Center, opens new tab. * #### World-Check, opens new tab.",
+                    "relevance_score": 0.4759,
+                    "evidence_label": "NOT_ENOUGH_INFO"
+                }
+            ],
+            "explanation": "The final label is 'Likely Real'. The classifier label was 'Likely Fake' with confidence 0.636. The current risk level is 'Low Risk'. This prediction was generated using the Fine-tuned DistilBERT 512. At this stage, the classifier found patterns closer to fake-news articles seen in the ISOT training dataset. However, the evidence-aware decision layer found more usable SUPPORTS evidence than REFUTES evidence, so the final label was marked Likely Real. The retrieved evidence summary contains 2 usable SUPPORTS, 0 usable REFUTES, and 2 usable NOT_ENOUGH_INFO items. There are 4 usable evidence items and 1 weak matches. The top evidence relevance score is 0.623. Displayed terms are simple content terms for review. Transformer-specific attribution can be added later using SHAP or attention-based analysis. The SLM-assisted verifier reviewed the retrieved evidence and returned stance 'SUPPORTS' with confidence 0.95. Verifier reason: Evidence 2 explicitly states the Eiffel Tower is in Paris. The final result should be treated as a misinformation risk assessment, not as absolute truth.",
+            "error": null
+        },
+        {
+            "case_id": "HYB04_SENSATIONAL_CLAIM",
+            "description": "Sensational misinformation-style claim should not become Likely Real",
+            "status": "passed",
+            "input_text": "Breaking shocking secret exposed by anonymous doctors and hidden media sources.",
+            "input_type": "claim",
+            "allowed_final_labels": [
+                "Misleading",
+                "Likely Fake",
+                "Uncertain"
+            ],
+            "actual_final_label": "Uncertain",
+            "allowed_risk_labels": [
+                "Medium Risk",
+                "High Risk"
+            ],
+            "actual_risk_label": "Medium Risk",
+            "model_used": "Fine-tuned DistilBERT 512",
+            "model_ok": true,
+            "label_ok": true,
+            "risk_ok": true,
+            "require_live_web_evidence": false,
+            "live_web_evidence_count": 5,
+            "live_web_ok": true,
+            "risk_score": 0.53,
+            "classifier_confidence": 1.0,
+            "classifier_probabilities": {
+                "real": 0.0,
+                "fake": 1.0
+            },
+            "raw_class": 1,
+            "evidence_summary": {
+                "retrieved_count": 5,
+                "usable_evidence_count": 5,
+                "weak_evidence_count": 0,
+                "supports_count": 0,
+                "refutes_count": 0,
+                "not_enough_info_count": 5,
+                "unknown_count": 0,
+                "strong_supports_count": 0,
+                "strong_refutes_count": 0,
+                "support_max_relevance": 0.0,
+                "refute_max_relevance": 0.0,
+                "not_enough_info_max_relevance": 0.62,
+                "top_evidence_label": "NOT_ENOUGH_INFO",
+                "top_relevance_score": 0.62,
+                "minimum_relevance_required": 0.5,
+                "strong_evidence_relevance_required": 0.65,
+                "minimum_aligned_evidence_count": 2,
+                "has_strong_support": false,
+                "has_strong_refute": false
+            },
+            "top_evidence": [
+                {
+                    "source": "factcheck.org",
+                    "text": "On this page, we feature a list of the false or misleading viral rumors we're asked about most often, and a brief summary of the facts.",
+                    "relevance_score": 0.62,
+                    "evidence_label": "NOT_ENOUGH_INFO"
+                },
+                {
+                    "source": "factcheck.afp.com",
+                    "text": "HAARP conspiracy theory falsely tied to deadly Venezuela earthquakes · Image of LGBTQ flags on Iran-Egypt World Cup pitch is altered · Misleading claims about ...",
+                    "relevance_score": 0.62,
+                    "evidence_label": "NOT_ENOUGH_INFO"
+                },
+                {
+                    "source": "cbsnews.com",
+                    "text": "Former CDC official describes \"pure chaos\" ... A former top official at the Centers for Disease Control and Prevention described \"pure chaos\" at the health agency as Health and Human Services Secretary Robert F. Kennedy Jr. sought to drastically transform its policies and personnel. ... In an interview with \"Face the Nation with Margaret Brennan\" airing Sunday, former CDC chief medical officer Dr. Debra Houry, who resigned from the agency in protest last summer alongside three other top officials, described the turmoil and concern inside the agency. Among her issues of concern: the June 9, 2025, removal of experts from a key vaccine advisory panel, as well as Kennedy's refusal to receive a briefing on the ongoing measles epidemic from the agency's top medical official, misinformation he has spread about the measles vaccine, and his general refusal to recognize facts that did not fit his agenda. ... \"Science doesn't change based on who is in office, and so when these things were happening, I knew this was different than before,\" she said in her first interview since a trove of emails that she provided to the Senate Health Committee were released in late June. \"I also didn't brief the secretary, which was very different than prior administrations. And when we had many requests coming from political appointees on things that had happened 30 years ago that didn't really need to be relitigated at a taxpayer expense, I became very concerned that data, science and facts would not be enough.\" ... On June 9, 2025, Kennedy removed all 17 members of an influential government panel that makes vaccine recommendations — the Advisory Committee for Immunization Practices, or ACIP — and circumvented the usual process for naming new members to install his allies, including those who had ties to lawsuits against vaccine makers. ... There was also a scramble to revive the webpages a day after Kennedy's second confirmation hearing. In a ... 10.30 p.m. email, acting CDC Director Dr. Susan Monarez, asked for certain websites related to the advisory committee be immediately restored. Houry did not think the timing was coincidental. Houry said they were told there was a concern about missing vaccine-related information harming Kennedy's confirmation vote and \"that it could reflect poorly on him.\" ... Houry also described several instances where CDC experts tried to offer briefings to Kennedy when he spread misinformation but were ignored. ... \"If we could provide him correct statistics, correct information, or maybe even a briefing on what CDC did, that might help them when he was speaking publicly, but we weren't taken up on that,\" she said about outreach she made to Kennedy's aides in response to some of his public messaging.",
+                    "relevance_score": 0.62,
+                    "evidence_label": "NOT_ENOUGH_INFO"
+                }
+            ],
+            "explanation": "The final label is 'Uncertain'. The classifier label was 'Likely Fake' with confidence 1.0. The current risk level is 'Medium Risk'. This prediction was generated using the Fine-tuned DistilBERT 512. At this stage, the classifier found patterns closer to fake-news articles seen in the ISOT training dataset. The final label was produced by combining the classifier output with the retrieved evidence quality. The retrieved evidence summary contains 0 usable SUPPORTS, 0 usable REFUTES, and 5 usable NOT_ENOUGH_INFO items. There are 5 usable evidence items and 0 weak matches. The top evidence relevance score is 0.62. Displayed terms are simple content terms for review. Transformer-specific attribution can be added later using SHAP or attention-based analysis. The SLM-assisted verifier reviewed the retrieved evidence and returned stance 'NOT_ENOUGH_INFO' with confidence 0.9. Verifier reason: Evidence discusses unrelated rumors and CDC chaos, not anonymous doctors or hidden media secrets. The final result should be treated as a misinformation risk assessment, not as absolute truth.",
+            "error": null
+        },
+        {
+            "case_id": "HYB05_NEUTRAL_ARTICLE",
+            "description": "Neutral article-style input should remain low risk or uncertain",
+            "status": "passed",
+            "input_text": "The government announced a new digital public service platform on Monday. Officials said the platform will be introduced in phases and will initially cover selected cities. According to the ministry, the system is expected to reduce paperwork and improve citizen access to public services. Independent experts said the impact will depend on implementation quality, data privacy safeguards, and adoption by local departments.",
+            "input_type": "article",
+            "allowed_final_labels": [
+                "Likely Real",
+                "Uncertain"
+            ],
+            "actual_final_label": "Likely Real",
+            "allowed_risk_labels": [
+                "Very Low Risk",
+                "Low Risk",
+                "Medium Risk"
+            ],
+            "actual_risk_label": "Very Low Risk",
+            "model_used": "Fine-tuned DistilBERT 512",
+            "model_ok": true,
+            "label_ok": true,
+            "risk_ok": true,
+            "require_live_web_evidence": false,
+            "live_web_evidence_count": 5,
+            "live_web_ok": true,
+            "risk_score": 0.1973,
+            "classifier_confidence": 0.8527,
+            "classifier_probabilities": {
+                "real": 0.8527,
+                "fake": 0.1473
+            },
+            "raw_class": 0,
+            "evidence_summary": {
+                "retrieved_count": 5,
+                "usable_evidence_count": 5,
+                "weak_evidence_count": 0,
+                "supports_count": 0,
+                "refutes_count": 0,
+                "not_enough_info_count": 5,
+                "unknown_count": 0,
+                "strong_supports_count": 0,
+                "strong_refutes_count": 0,
+                "support_max_relevance": 0.0,
+                "refute_max_relevance": 0.0,
+                "not_enough_info_max_relevance": 0.62,
+                "top_evidence_label": "NOT_ENOUGH_INFO",
+                "top_relevance_score": 0.62,
+                "minimum_relevance_required": 0.5,
+                "strong_evidence_relevance_required": 0.65,
+                "minimum_aligned_evidence_count": 2,
+                "has_strong_support": false,
+                "has_strong_refute": false
+            },
+            "top_evidence": [
+                {
+                    "source": "ena.et",
+                    "text": "Addis Ababa, June 20, 2026 (ENA) —Prime Minister Abiy Ahmed has inaugurated today the Unified MESOB Application, Africa's first unified digital service application that brings services from across institutions onto a single platform. ... The PM inaugurated the application, which he described as a landmark achievement in Ethiopia's digital transformation journey, during the Digital for Excellence Summit. ... In a social media statement, Prime Minister Abiy said the inauguration of the Unified MESOB Application is a source of immense national pride and a testament to what deliberate, focused investment in technology can deliver. ... According to him, the MESOB one-stop service is a critical economic infrastructure that saves citizens' time, closes corruption gaps, and strengthens institutional integrity on the government side. ... He emphasized that the platform stands as a clear demonstration that Ethiopia's ambitions are not wishes, but realities built through the country's own efforts and capabilities. ... The PM called for consolidating the achievement and share the experience with other African countries to move forward with greater determination to deliver further innovations and progress.",
+                    "relevance_score": 0.62,
+                    "evidence_label": "NOT_ENOUGH_INFO"
+                },
+                {
+                    "source": "english.beijing.gov.cn",
+                    "text": "With the official launch of the Jingtong app, Beijing's government service platform has been fully upgraded. The app integrates service and information resources from all authorities citywide with smarter services, new functions, revamped user interfaces, enhanced usability, and stronger security, making it a new gateway for \"Beijing Service\". ... The newly launched Jingtong app has integrated over 1,400 government and public service items, covering core areas such as social security, healthcare, education, and employment. In addition to personal (个人版) and business (企业版) versions, the app also offers special versions for seniors, the visually impaired, and English speakers, providing comprehensive services for all types of users. When the user's phone system language is set to English, the app will automatically switch to its English version. The app has also introduced the \"News\" section that encompasses information about culture, sports, transportation, healthcare, and other topics, along with the \"Events Calendar\" (城市服务日历) that lists the latest daily events, displaying government services, public services, and public information in one place. ... The mini-program of Jingtong will remain functional, so users can choose to use any platform that works best for them. The app is now available on major mobile app stores—you can search for \"Jingtong\" (京通) or \"Beijing Service\" (北京服务) to download it.",
+                    "relevance_score": 0.62,
+                    "evidence_label": "NOT_ENOUGH_INFO"
+                },
+                {
+                    "source": "mtcit.gov.om",
+                    "text": "Muscat, Oman – Under the patronage of His Highness Sayyid Theyazin bin Haitham Al Said, Minister of Culture, Sports, and Youth, the Unified Government Services Portal (gov.om) was officially launched today as part of the “Together We Advance” Forum. The event, organized by the General Secretariat of the Council of Ministers, took place at the Oman Convention and Exhibition Centre and marked a significant milestone in the digital transformation of government services in the Sultanate. ... The launch of the unified portal ... a strategic step toward enhancing government service delivery and improving the digital experience for users. By consolidating multiple services into a single digital gateway, the initiative aims to ... access for citizens and residents, accelerate transaction processing, and simplify procedures across government entities. ... Commenting on the launch, H.E. Eng. Said bin Hamoud Al Maawali, Minister of Transport, Communications, and Information Technology and General Supervisor of the National Digital Government Transformation Program, emphasized that the initiative aligns with the government’s strategic vision to restructure service delivery, ensuring it becomes ... platform, eliminating the need for users to navigate multiple ministry websites and offering a seamless, integrated experience for accessing government services ... The first phase of the portal includes ten key government entities, namely: Royal Oman Police, Ministry of Health, Ministry of Social Development, Ministry of Labour, Ministry of Housing and Urban Planning, Ministry of Higher Education, Research, and Innovation, Social Protection Fund, Supreme Judicial Council, Ministry of Agricultural, Fisheries Wealth, and Water Resources, Ministry of Transport, Communications, and Information Technology. ... He also highlighted that the portal acts as a comprehensive digital directory, providing structured access to government services based on clear classifications that cater to different user needs. The first phase of the project, scheduled for rollout this year, includes 91 integrated digital services from 10 government institutions, with services being introduced gradually according to a structured timeline. Efforts are also ongoing to enhance the portal’s digital infrastructure and optimize technical systems, ensuring a user-centric approach to digital services. ... He described the portal as a central hub for government services, designed to unify existing digital services under a single platform. The initial phase focuses on consolidating services currently available through various government portals, with future phases set to introduce integrated services that enhance efficiency and minimize redundancy.",
+                    "relevance_score": 0.62,
+                    "evidence_label": "NOT_ENOUGH_INFO"
+                }
+            ],
+            "explanation": "The final label is 'Likely Real'. The classifier label was 'Likely Real' with confidence 0.8527. The current risk level is 'Very Low Risk'. This prediction was generated using the Fine-tuned DistilBERT 512. At this stage, the classifier found patterns closer to real-news articles seen in the ISOT training dataset. The final label was produced by combining the classifier output with the retrieved evidence quality. The retrieved evidence summary contains 0 usable SUPPORTS, 0 usable REFUTES, and 5 usable NOT_ENOUGH_INFO items. There are 5 usable evidence items and 0 weak matches. The top evidence relevance score is 0.62. Displayed terms are simple content terms for review. Transformer-specific attribution can be added later using SHAP or attention-based analysis. The SLM-assisted verifier reviewed the retrieved evidence and returned stance 'REFUTES' with confidence 0.95. Verifier reason: Evidence shows platforms were already launched, contradicting the claim of a new announcement on Monday. The final result should be treated as a misinformation risk assessment, not as absolute truth.",
+            "error": null
+        },
+        {
+            "case_id": "HYB06_VACCINE_MICROCHIP",
+            "description": "Common conspiracy-style health misinformation claim",
+            "status": "passed",
+            "input_text": "COVID-19 vaccines contain microchips used to track people.",
+            "input_type": "claim",
+            "allowed_final_labels": [
+                "Likely Fake",
+                "Misleading",
+                "Uncertain"
+            ],
+            "actual_final_label": "Likely Fake",
+            "allowed_risk_labels": [
+                "Medium Risk",
+                "High Risk"
+            ],
+            "actual_risk_label": "High Risk",
+            "model_used": "Fine-tuned DistilBERT 512",
+            "model_ok": true,
+            "label_ok": true,
+            "risk_ok": true,
+            "require_live_web_evidence": false,
+            "live_web_evidence_count": 3,
+            "live_web_ok": true,
+            "risk_score": 0.8,
+            "classifier_confidence": 0.9979,
+            "classifier_probabilities": {
+                "real": 0.0021,
+                "fake": 0.9979
+            },
+            "raw_class": 1,
+            "evidence_summary": {
+                "retrieved_count": 5,
+                "usable_evidence_count": 5,
+                "weak_evidence_count": 0,
+                "supports_count": 0,
+                "refutes_count": 3,
+                "not_enough_info_count": 2,
+                "unknown_count": 0,
+                "strong_supports_count": 0,
+                "strong_refutes_count": 3,
+                "support_max_relevance": 0.0,
+                "refute_max_relevance": 0.8029,
+                "not_enough_info_max_relevance": 0.7126,
+                "top_evidence_label": "REFUTES",
+                "top_relevance_score": 0.8029,
+                "minimum_relevance_required": 0.5,
+                "strong_evidence_relevance_required": 0.65,
+                "minimum_aligned_evidence_count": 2,
+                "has_strong_support": false,
+                "has_strong_refute": true
+            },
+            "top_evidence": [
+                {
+                    "source": "paho.org",
+                    "text": "Truth: It is impossible for vaccines to track people. Explanation Absolutely no vaccines – including the vaccines against COVID-19 – contain any microchips, including ones that would let governments or any other entities in power track people. Remember: Vaccines are developed and used to keep people healthy, not to track them. Myth: Vaccines contain microchips that can track people.",
+                    "relevance_score": 0.8029,
+                    "evidence_label": "REFUTES"
+                },
+                {
+                    "source": "factcheck.org",
+                    "text": "A video circulating on social media falsely claims that vaccines for COVID-19 have a microchip that “tracks the location of the patient.” The chip, which is not currently in use, would be attached to the end of a plastic vial and provide information only about the vaccine dose. In the interview, Walker explained that his company had received a federal contract to ramp up production of its prefilled syringes so that they would be available for use in administering either vaccines or therapeutics for COVID-19. The syringes can also be made with an optional chip that could be attached to the end of the plastic vial to store information about its contents. The chip is an RFID tag, which is short for radio frequency identification, and requires a device to scan and read the data. It’s unclear how that would even work, though, since the RFID tag is attached to the vial and can’t be injected into a patient.",
+                    "relevance_score": 0.7605,
+                    "evidence_label": "REFUTES"
+                },
+                {
+                    "source": "LIAR2 Enhanced | hal turner radio show | health care;public health;facebook fact-checks;coronavirus",
+                    "text": "Claim: People with the COVID-19 vaccine are being \"tracked in real time via 5G cellular, and all that data can be hacked into to track you.. Fact-check rating: pants-fire. Speaker or source: hal turner radio show. Subject: health care;public health;facebook fact-checks;coronavirus. Date: May 20, 2021. Context: a blog post. Justification: Turner posted a video on his website that claims to show a Russian hacker accessing information from a microchip that was injected into someone when they received a COVID-19 vaccination. That information can be used to track someone’s movements. There is no that any of the COVID-19 vaccines currently in use contain microchips or any ingredients with networking capabilities that allow people to be tracked. Similar claims about the vaccines have been debunked in the past. We rate this !",
+                    "relevance_score": 0.7126,
+                    "evidence_label": "NOT_ENOUGH_INFO"
+                }
+            ],
+            "explanation": "The final label is 'Likely Fake'. The classifier label was 'Likely Fake' with confidence 0.9979. The current risk level is 'High Risk'. This prediction was generated using the Fine-tuned DistilBERT 512. At this stage, the classifier found patterns closer to fake-news articles seen in the ISOT training dataset. The evidence-aware decision layer found more usable REFUTES evidence than SUPPORTS evidence, so the final label was marked Likely Fake. The retrieved evidence summary contains 0 usable SUPPORTS, 3 usable REFUTES, and 2 usable NOT_ENOUGH_INFO items. There are 5 usable evidence items and 0 weak matches. The top evidence relevance score is 0.8029. Displayed terms are simple content terms for review. Transformer-specific attribution can be added later using SHAP or attention-based analysis. The SLM-assisted verifier reviewed the retrieved evidence and returned stance 'REFUTES' with confidence 0.95. Verifier reason: Evidence states vaccines contain no microchips and cannot track people. The final result should be treated as a misinformation risk assessment, not as absolute truth.",
+            "error": null
+        },
+        {
+            "case_id": "HYB07_MOON_LANDING_STUDIO",
+            "description": "Common conspiracy-style historical misinformation claim",
+            "status": "passed",
+            "input_text": "The moon landing was filmed in a studio.",
+            "input_type": "claim",
+            "allowed_final_labels": [
+                "Likely Fake",
+                "Misleading",
+                "Uncertain"
+            ],
+            "actual_final_label": "Likely Fake",
+            "allowed_risk_labels": [
+                "Medium Risk",
+                "High Risk"
+            ],
+            "actual_risk_label": "High Risk",
+            "model_used": "Fine-tuned DistilBERT 512",
+            "model_ok": true,
+            "label_ok": true,
+            "risk_ok": true,
+            "require_live_web_evidence": false,
+            "live_web_evidence_count": 5,
+            "live_web_ok": true,
+            "risk_score": 0.75,
+            "classifier_confidence": 0.9995,
+            "classifier_probabilities": {
+                "real": 0.0005,
+                "fake": 0.9995
+            },
+            "raw_class": 1,
+            "evidence_summary": {
+                "retrieved_count": 5,
+                "usable_evidence_count": 5,
+                "weak_evidence_count": 0,
+                "supports_count": 0,
+                "refutes_count": 3,
+                "not_enough_info_count": 2,
+                "unknown_count": 0,
+                "strong_supports_count": 0,
+                "strong_refutes_count": 0,
+                "support_max_relevance": 0.0,
+                "refute_max_relevance": 0.62,
+                "not_enough_info_max_relevance": 0.62,
+                "top_evidence_label": "REFUTES",
+                "top_relevance_score": 0.62,
+                "minimum_relevance_required": 0.5,
+                "strong_evidence_relevance_required": 0.65,
+                "minimum_aligned_evidence_count": 2,
+                "has_strong_support": false,
+                "has_strong_refute": false
+            },
+            "top_evidence": [
+                {
+                    "source": "snopes.com",
+                    "text": "# Footage Shows Stanley Kubrick Directing the ... ## The 1969 Apollo 11 moon landing was faked, according to conspiracy theorists. ... Claim: Archived footage from Stanley Kubrick showed him shooting scenes for the Apollo 11 moon landing in 1969, proving that it was faked. ... A portion of the in-question video was behind-the-scenes ... from the set of the 2018 movie \"First Man,\" ... Ryan Gosling ... Neil Armstrong. ... In December 2023, a post on X shared footage of the 1969 Apollo 11 moon landing with a film crew present on the moon — apparent evidence that the whole thing had been faked. ... It wasn't the first time such a claim had been shared. In June 2023, a post claimed to prove the 1969 Apollo 11 moon landing was faked by sharing footage of the alleged simulation and saying Stanley Kubrick directed it. The video showed a film crew standing on a landscape that resembled the moon alongside people wearing astronaut costumes. ... The tweet(archive) said: \"Archive footage of Stanley Kubrick that he requested to be published after his death and a cover letter in which he says, among other things: 'With the cooperation of the US government & NASA, we faked the moon landings. ALL moon landings were faked and I filmed them all.\" ... The footage did not depict a shoot by Kubrick, and the scene recorded was not evidence of a film crew and actors faking the moon landing. A portion of the video was behind-the-scenes footage from the set of the 2018 movie \"First Man,\" which was a fictionalized account of the moon landing starring Ryan Gosling as Neil Armstrong. ... which used authentic NASA footage of astronauts on various space missions, ranging ... 7. ( ... .) It was not known from where the ... ) originated. ... The June 2023 tweet was not the first instance of someone claiming that Kubrick shot and directed footage of the 1969 moon landing, proving it was faked. In 2015, one particular rumor centered on an alleged interview with the famed director in which he supposedly said he helped NASA shoot a moon-landing video. The interview was fake (it did not actually show Kubrick) and originated from a film by T. Patrick Murray titled \"Shooting Stanley Kubrick.\" ... A spokesperson for Kubrick's widow confirmed that interview was falsified. \"Stanley Kubrick has never been interviewed by T. Patrick Murray the whole story is made up, fraudulent and untrue,\" the spokesperson said. ... Given that a portion of the in-question footage was pulled from a fictionalized Hollywood film about the moon landing, the real clips of astronauts were unrelated to that movie and misrepresented, and Kubrick's family spoke against his alleged involvement in such a conspiracy theory in the past, we rated this claim \"False.\"",
+                    "relevance_score": 0.62,
+                    "evidence_label": "REFUTES"
+                },
+                {
+                    "source": "pbs.org",
+                    "text": "A common theory is that film director Stanley Kubrick helped NASA fake the historic footage of its six successful moon landings.",
+                    "relevance_score": 0.62,
+                    "evidence_label": "REFUTES"
+                },
+                {
+                    "source": "rmg.co.uk",
+                    "text": "The Moon landings were faked. Apollo 11 didn't happen. Humans never set foot on the Moon. Heard all this before?",
+                    "relevance_score": 0.62,
+                    "evidence_label": "NOT_ENOUGH_INFO"
+                }
+            ],
+            "explanation": "The final label is 'Likely Fake'. The classifier label was 'Likely Fake' with confidence 0.9995. The current risk level is 'High Risk'. This prediction was generated using the Fine-tuned DistilBERT 512. At this stage, the classifier found patterns closer to fake-news articles seen in the ISOT training dataset. The evidence-aware decision layer found more usable REFUTES evidence than SUPPORTS evidence, so the final label was marked Likely Fake. The retrieved evidence summary contains 0 usable SUPPORTS, 3 usable REFUTES, and 2 usable NOT_ENOUGH_INFO items. There are 5 usable evidence items and 0 weak matches. The top evidence relevance score is 0.62. Displayed terms are simple content terms for review. Transformer-specific attribution can be added later using SHAP or attention-based analysis. The SLM-assisted verifier reviewed the retrieved evidence and returned stance 'REFUTES' with confidence 0.95. Verifier reason: Evidence confirms moon landings were real and Kubrick did not fake them. The final result should be treated as a misinformation risk assessment, not as absolute truth.",
+            "error": null
+        },
+        {
+            "case_id": "HYB08_BUFFETT_BIRTH_STATE",
+            "description": "Local FEVER-supported factual claim should remain stable in hybrid mode",
+            "status": "passed",
+            "input_text": "Warren Buffett was born in a state.",
+            "input_type": "claim",
+            "allowed_final_labels": [
+                "Likely Real"
+            ],
+            "actual_final_label": "Likely Real",
+            "allowed_risk_labels": [
+                "Low Risk",
+                "Very Low Risk"
+            ],
+            "actual_risk_label": "Low Risk",
+            "model_used": "Fine-tuned DistilBERT 512",
+            "model_ok": true,
+            "label_ok": true,
+            "risk_ok": true,
+            "require_live_web_evidence": false,
+            "live_web_evidence_count": 3,
+            "live_web_ok": true,
+            "risk_score": 0.3,
+            "classifier_confidence": 0.9998,
+            "classifier_probabilities": {
+                "real": 0.0002,
+                "fake": 0.9998
+            },
+            "raw_class": 1,
+            "evidence_summary": {
+                "retrieved_count": 5,
+                "usable_evidence_count": 4,
+                "weak_evidence_count": 1,
+                "supports_count": 3,
+                "refutes_count": 0,
+                "not_enough_info_count": 1,
+                "unknown_count": 0,
+                "strong_supports_count": 2,
+                "strong_refutes_count": 0,
+                "support_max_relevance": 0.7962,
+                "refute_max_relevance": 0.0,
+                "not_enough_info_max_relevance": 0.62,
+                "top_evidence_label": "SUPPORTS",
+                "top_relevance_score": 0.7962,
+                "minimum_relevance_required": 0.5,
+                "strong_evidence_relevance_required": 0.65,
+                "minimum_aligned_evidence_count": 2,
+                "has_strong_support": true,
+                "has_strong_refute": false
+            },
+            "top_evidence": [
+                {
+                    "source": "FEVER",
+                    "text": "Claim: Warren Buffett was born in a state.. Evidence source: Warren_Buffett. Label: SUPPORTS.",
+                    "relevance_score": 0.7962,
+                    "evidence_label": "SUPPORTS"
+                },
+                {
+                    "source": "FEVER",
+                    "text": "Claim: Warren Buffett was born in a state.. Evidence source: Omaha,_Nebraska. Label: SUPPORTS.",
+                    "relevance_score": 0.7754,
+                    "evidence_label": "SUPPORTS"
+                },
+                {
+                    "source": "britannica.com",
+                    "text": "# Warren Buffett. Also known as: Warren Edward Buffett. Warren Buffett, who led Berkshire Hathaway for six decades before stepping down as CEO at the end of 2025. ### What is Warren Buffett known for? Warren Buffett, known as the “Oracle of Omaha,” is an American businessman and philanthropist widely regarded as one of the most successful investors in history. ### What is Warren Buffett’s primary investment vehicle? Berkshire Hathaway Inc. has been Warren Buffett’s primary investment vehicle since he took control of the company in 1965. Warren Buffett (born August 30, 1930, Omaha, Nebraska) is an American businessman and philanthropist, widely considered one of the most successful investors of the 20th and early 21st centuries. In 1956 Buffett returned to Omaha, and in 1965 took majority control of the textile manufacturer Berkshire Hathaway Inc., turning it into his primary investment vehicle. Warren Buffett meeting with President Barack Obama at the White House in 2011. Warren Buffett and President Barack Obama during a White House meeting in 2011.",
+                    "relevance_score": 0.5769,
+                    "evidence_label": "SUPPORTS"
+                }
+            ],
+            "explanation": "The final label is 'Likely Real'. The classifier label was 'Likely Fake' with confidence 0.9998. The current risk level is 'Low Risk'. This prediction was generated using the Fine-tuned DistilBERT 512. At this stage, the classifier found patterns closer to fake-news articles seen in the ISOT training dataset. However, the evidence-aware decision layer found more usable SUPPORTS evidence than REFUTES evidence, so the final label was marked Likely Real. The retrieved evidence summary contains 3 usable SUPPORTS, 0 usable REFUTES, and 1 usable NOT_ENOUGH_INFO items. There are 4 usable evidence items and 1 weak matches. The top evidence relevance score is 0.7962. Displayed terms are simple content terms for review. Transformer-specific attribution can be added later using SHAP or attention-based analysis. The SLM-assisted verifier reviewed the retrieved evidence and returned stance 'SUPPORTS' with confidence 1.0. Verifier reason: Evidence confirms Buffett was born in Omaha, Nebraska, a state. The final result should be treated as a misinformation risk assessment, not as absolute truth.",
+            "error": null
+        }
+    ]
+}

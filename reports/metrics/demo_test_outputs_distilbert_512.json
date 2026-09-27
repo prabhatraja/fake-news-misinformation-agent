@@ -1,0 +1,364 @@
+{
+    "generated_at": "2026-06-27T11:22:01.716863",
+    "api_url": "http://127.0.0.1:8000/api/v1/predict",
+    "model_mode": "transformer",
+    "expected_model": "Fine-tuned DistilBERT 512",
+    "total_cases": 5,
+    "passed_cases": 4,
+    "failed_cases": 1,
+    "test_outputs": [
+        {
+            "case_id": "TC01_SUPPORT_CLAIM",
+            "description": "Claim with strong FEVER support evidence",
+            "status": "passed",
+            "input_text": "Warren Buffett was born in a state.",
+            "input_type": "claim",
+            "expected_final_label": "Likely Real",
+            "actual_final_label": "Likely Real",
+            "expected_risk_label": "Low Risk",
+            "actual_risk_label": "Low Risk",
+            "final_label": "Likely Real",
+            "risk_score": 0.3,
+            "risk_label": "Low Risk",
+            "model_used": "Fine-tuned DistilBERT 512",
+            "classifier_confidence": 0.9998,
+            "classifier_probabilities": {
+                "real": 0.0002,
+                "fake": 0.9998
+            },
+            "raw_class": 1,
+            "evidence_summary": {
+                "retrieved_count": 5,
+                "usable_evidence_count": 4,
+                "weak_evidence_count": 1,
+                "supports_count": 2,
+                "refutes_count": 0,
+                "not_enough_info_count": 2,
+                "unknown_count": 0,
+                "strong_supports_count": 2,
+                "strong_refutes_count": 0,
+                "support_max_relevance": 0.7962,
+                "refute_max_relevance": 0.0,
+                "not_enough_info_max_relevance": 0.7434,
+                "top_evidence_label": "SUPPORTS",
+                "top_relevance_score": 0.7962,
+                "minimum_relevance_required": 0.5,
+                "strong_evidence_relevance_required": 0.65,
+                "minimum_aligned_evidence_count": 2,
+                "has_strong_support": true,
+                "has_strong_refute": false
+            },
+            "content_terms": [
+                "warren",
+                "buffett",
+                "born",
+                "state"
+            ],
+            "top_evidence": [
+                {
+                    "source": "FEVER",
+                    "text": "Claim: Warren Buffett was born in a state.. Evidence source: Warren_Buffett. Label: SUPPORTS.",
+                    "relevance_score": 0.7962,
+                    "evidence_label": "SUPPORTS"
+                },
+                {
+                    "source": "FEVER",
+                    "text": "Claim: Warren Buffett was born in a state.. Evidence source: Omaha,_Nebraska. Label: SUPPORTS.",
+                    "relevance_score": 0.7754,
+                    "evidence_label": "SUPPORTS"
+                },
+                {
+                    "source": "cnn.com",
+                    "text": "Warren Buffett greets shareholders during Berkshire Hathaway's annual shareholder meeting in Omaha, Nebraska, in 2008. Buffett was born in Omaha, Nebraska, on August 30, 1930. He was the only son of Laila and Howard Buffett. Laila Buffett poses with her three children -- from left, Roberta, Warren and Doris. Warren Buffett stands in front of his childhood home in Omaha. Buffett teaches a class at the University of Nebraska-Omaha. Buffett and his wife pose at the beach with their three children. Buffett attends one of Berkshire's annual shareholders meeting. Buffett arrives at an Omaha Dairy Queen to autograph books and chat with Berkshire Hathaway shareholders in 2002. Many people were in Omaha for Berkshire Hathaway's annual shareholders meeting, which has been described as \"the Woodstock of Capitalism.\". Buffett is mobbed by journalists and shareholders during Berkshire Hathaway's annual shareholders meeting in 2011. Buffett talks with his son Peter before the start of the shareholders meeting in 2011.",
+                    "relevance_score": 0.7434,
+                    "evidence_label": "NOT_ENOUGH_INFO"
+                }
+            ],
+            "explanation": "The final label is 'Likely Real'. The classifier label was 'Likely Fake' with confidence 0.9998. The current risk level is 'Low Risk'. This prediction was generated using the Fine-tuned DistilBERT 512. At this stage, the classifier found patterns closer to fake-news articles seen in the ISOT training dataset. However, the evidence-aware decision layer found more usable SUPPORTS evidence than REFUTES evidence, so the final label was marked Likely Real. The retrieved evidence summary contains 2 usable SUPPORTS, 0 usable REFUTES, and 2 usable NOT_ENOUGH_INFO items. There are 4 usable evidence items and 1 weak matches. The top evidence relevance score is 0.7962. Displayed terms are simple content terms for review. Transformer-specific attribution can be added later using SHAP or attention-based analysis. The final result should be treated as a misinformation risk assessment, not as absolute truth."
+        },
+        {
+            "case_id": "TC02_WEAK_EVIDENCE_CLAIM",
+            "description": "Known factual claim but weak retrieval evidence in current FEVER subset",
+            "status": "failed",
+            "input_text": "Barack Obama was born in Hawaii.",
+            "input_type": "claim",
+            "expected_final_label": "Uncertain",
+            "actual_final_label": "Likely Real",
+            "expected_risk_label": "Medium Risk",
+            "actual_risk_label": "Low Risk",
+            "final_label": "Likely Real",
+            "risk_score": 0.3,
+            "risk_label": "Low Risk",
+            "model_used": "Fine-tuned DistilBERT 512",
+            "classifier_confidence": 0.9999,
+            "classifier_probabilities": {
+                "real": 0.0001,
+                "fake": 0.9999
+            },
+            "raw_class": 1,
+            "evidence_summary": {
+                "retrieved_count": 5,
+                "usable_evidence_count": 5,
+                "weak_evidence_count": 0,
+                "supports_count": 3,
+                "refutes_count": 0,
+                "not_enough_info_count": 2,
+                "unknown_count": 0,
+                "strong_supports_count": 3,
+                "strong_refutes_count": 0,
+                "support_max_relevance": 0.7931,
+                "refute_max_relevance": 0.0,
+                "not_enough_info_max_relevance": 0.6554,
+                "top_evidence_label": "SUPPORTS",
+                "top_relevance_score": 0.7321,
+                "minimum_relevance_required": 0.5,
+                "strong_evidence_relevance_required": 0.65,
+                "minimum_aligned_evidence_count": 2,
+                "has_strong_support": true,
+                "has_strong_refute": false
+            },
+            "content_terms": [
+                "barack",
+                "obama",
+                "born",
+                "hawaii"
+            ],
+            "top_evidence": [
+                {
+                    "source": "bbc.com",
+                    "text": "# The birth of the Obama 'birther' conspiracy. **Republican Donald Trump asserted that Democrat Hillary Clinton and her campaign team first raised questions about Barack Obama's birthplace in 2008 - and that he was the man who settled the issue in 2011.**. As a preface to this latest turn in the Obama \"birther\" row, it should be noted that the location of Mr Obama's birth is generally considered irrelevant to whether Mr Obama is eligible to serve as US president. As long as he has one parent who was a US citizen, as Mr Obama's Kansas-born mother was, he is considered by the US government to be a \"natural born citizen\". In June 2008 the Obama campaign released a photocopy of his short-form \"certificate of live birth\" showing that he was born in Honolulu, Hawaii, on 4 August, 1961. This handout image provided by the White House shows a copy of the long form of President Barack Obama\"s birth certificate from Hawaii.",
+                    "relevance_score": 0.7321,
+                    "evidence_label": "SUPPORTS"
+                },
+                {
+                    "source": "publicintegrity.org",
+                    "text": "Obama's long-form birth certificate. President Barack Obama released the long-form version of his birth certificate, yet another piece of concrete evidence that shows he was born in the United States. And, in fact, FactCheck.org staffers handled, examined and photographed the \u201ccertification of live birth.\u201d That short-form document is what Hawaii releases to citizens who request a copy of their birth certificate, and we confirmed that it meets legal requirements for proving citizenship and obtaining a passport. And on top of that, Chiyome Fukino, the then-director of Hawaii\u2019s Department of Health, released a statement in 2008, saying she had seen the original birth certificate on file verifying that Obama was born in Hawaii. An attorney for Obama, Judith Corley, wrote to the Hawaii Department of Health on April 22, requesting \u201ca waiver of the Department of Health\u2019s policy, so that my client can obtain two certified copies of his original, \u2018long form\u2019 birth certificate.",
+                    "relevance_score": 0.7931,
+                    "evidence_label": "SUPPORTS"
+                },
+                {
+                    "source": "abcnews.com",
+                    "text": "HONOLULU -- In an attempt to quash persistent rumors that President Obama was not born in Honolulu on Aug. 4, 1961, Hawaii's health director reiterated this afternoon that she has personally seen Obama's birth certificate in the Health Department's archives. \"I, Dr. Chiyome Fukino, director of the Hawaii State Department of Health, have seen the original vital records maintained on file by the Hawai'i State Department of Health verifying Barrack Hussein Obama was born in Hawaii and is a natural-born American citizen. On Oct. 31, Fukino originally tried to put an end to the belief among so-called \"birthers\" that Obama was not born in the United States and thus was ineligible to run for the office of president. The line \"Whereas the 44th President of the United States, Barack Obama, was born in Hawaii on August 4, 1961;\" has been construed by some who believe Obama is not a U.S.-born citizen as a thinly veiled attempt to get Congress to affirm Obama's U.S. Citizenship,\" Abercrombie spokesman Dave Helfert said.",
+                    "relevance_score": 0.7309,
+                    "evidence_label": "SUPPORTS"
+                }
+            ],
+            "explanation": "The final label is 'Likely Real'. The classifier label was 'Likely Fake' with confidence 0.9999. The current risk level is 'Low Risk'. This prediction was generated using the Fine-tuned DistilBERT 512. At this stage, the classifier found patterns closer to fake-news articles seen in the ISOT training dataset. However, the evidence-aware decision layer found more usable SUPPORTS evidence than REFUTES evidence, so the final label was marked Likely Real. The retrieved evidence summary contains 3 usable SUPPORTS, 0 usable REFUTES, and 2 usable NOT_ENOUGH_INFO items. There are 5 usable evidence items and 0 weak matches. The top evidence relevance score is 0.7321. Displayed terms are simple content terms for review. Transformer-specific attribution can be added later using SHAP or attention-based analysis. The final result should be treated as a misinformation risk assessment, not as absolute truth."
+        },
+        {
+            "case_id": "TC03_REFUTATION_STYLE_CLAIM",
+            "description": "Claim likely to require refutation-style evidence",
+            "status": "passed",
+            "input_text": "The Eiffel Tower is located in Berlin.",
+            "input_type": "claim",
+            "expected_final_label": "Uncertain",
+            "actual_final_label": "Uncertain",
+            "expected_risk_label": "Medium Risk",
+            "actual_risk_label": "Medium Risk",
+            "final_label": "Uncertain",
+            "risk_score": 0.5,
+            "risk_label": "Medium Risk",
+            "model_used": "Fine-tuned DistilBERT 512",
+            "classifier_confidence": 0.5346,
+            "classifier_probabilities": {
+                "real": 0.5346,
+                "fake": 0.4654
+            },
+            "raw_class": 0,
+            "evidence_summary": {
+                "retrieved_count": 5,
+                "usable_evidence_count": 0,
+                "weak_evidence_count": 5,
+                "supports_count": 0,
+                "refutes_count": 0,
+                "not_enough_info_count": 0,
+                "unknown_count": 0,
+                "strong_supports_count": 0,
+                "strong_refutes_count": 0,
+                "support_max_relevance": 0.0,
+                "refute_max_relevance": 0.0,
+                "not_enough_info_max_relevance": 0.0,
+                "top_evidence_label": "NOT_ENOUGH_INFO",
+                "top_relevance_score": 0.4818,
+                "minimum_relevance_required": 0.5,
+                "strong_evidence_relevance_required": 0.65,
+                "minimum_aligned_evidence_count": 2,
+                "has_strong_support": false,
+                "has_strong_refute": false
+            },
+            "content_terms": [
+                "eiffel",
+                "tower",
+                "located",
+                "berlin"
+            ],
+            "top_evidence": [
+                {
+                    "source": "FEVER",
+                    "text": "Claim: Haifa is home to the Eiffel Tower.. Label: NOT_ENOUGH_INFO.",
+                    "relevance_score": 0.4818,
+                    "evidence_label": "NOT_ENOUGH_INFO"
+                },
+                {
+                    "source": "FEVER",
+                    "text": "Claim: Berlin is a place.. Evidence source: Berlin. Label: SUPPORTS.",
+                    "relevance_score": 0.4745,
+                    "evidence_label": "SUPPORTS"
+                },
+                {
+                    "source": "LIAR2 Enhanced | tweets | corrections and updates;facebook fact-checks;ukraine",
+                    "text": "Claim: Photo shows Empire State Building lit up to support Ukraine.. Fact-check rating: false. Speaker or source: tweets. Subject: corrections and updates;facebook fact-checks;ukraine. Date: February 23, 2022. Context: a tweet. Justification: In August 2012, the south side of the Empire State Building lit up yellow and blue for Ukraine, which was competing in the Olympics in London. The other sides of the building were lit up for other countries also competing. A website dedicated to news about Ukraine also posted in August 2005 that \"for the second year in a row,\" the tower displayed \"blue and gold\" to commemorate the country\u2019s Independence Day on Aug. 24. We reached out to the Empire State Building to confirm but did not immediately hear back. We rate claims that this image being shared on social media shows the tower lit up for Ukraine amid the Russian invasion there .",
+                    "relevance_score": 0.4112,
+                    "evidence_label": "NOT_ENOUGH_INFO"
+                }
+            ],
+            "explanation": "The final label is 'Uncertain'. The classifier label was 'Likely Real' with confidence 0.5346. The current risk level is 'Medium Risk'. This prediction was generated using the Fine-tuned DistilBERT 512. At this stage, the classifier found patterns closer to real-news articles seen in the ISOT training dataset. Because no sufficiently relevant evidence was found, the decision layer marked the claim as Uncertain rather than trusting the classifier alone. The retrieved evidence summary contains 0 usable SUPPORTS, 0 usable REFUTES, and 0 usable NOT_ENOUGH_INFO items. There are 0 usable evidence items and 5 weak matches. The top evidence relevance score is 0.4818. Displayed terms are simple content terms for review. Transformer-specific attribution can be added later using SHAP or attention-based analysis. The final result should be treated as a misinformation risk assessment, not as absolute truth."
+        },
+        {
+            "case_id": "TC04_SENSATIONAL_CLAIM",
+            "description": "Sensational misinformation-style short claim",
+            "status": "passed",
+            "input_text": "Breaking shocking secret exposed by anonymous doctors and hidden media sources.",
+            "input_type": "claim",
+            "expected_final_label": "Misleading",
+            "actual_final_label": "Misleading",
+            "expected_risk_label": "Medium Risk",
+            "actual_risk_label": "Medium Risk",
+            "final_label": "Misleading",
+            "risk_score": 0.65,
+            "risk_label": "Medium Risk",
+            "model_used": "Fine-tuned DistilBERT 512",
+            "classifier_confidence": 1.0,
+            "classifier_probabilities": {
+                "real": 0.0,
+                "fake": 1.0
+            },
+            "raw_class": 1,
+            "evidence_summary": {
+                "retrieved_count": 5,
+                "usable_evidence_count": 2,
+                "weak_evidence_count": 3,
+                "supports_count": 0,
+                "refutes_count": 0,
+                "not_enough_info_count": 2,
+                "unknown_count": 0,
+                "strong_supports_count": 0,
+                "strong_refutes_count": 0,
+                "support_max_relevance": 0.0,
+                "refute_max_relevance": 0.0,
+                "not_enough_info_max_relevance": 0.5149,
+                "top_evidence_label": "NOT_ENOUGH_INFO",
+                "top_relevance_score": 0.5149,
+                "minimum_relevance_required": 0.5,
+                "strong_evidence_relevance_required": 0.65,
+                "minimum_aligned_evidence_count": 2,
+                "has_strong_support": false,
+                "has_strong_refute": false
+            },
+            "content_terms": [
+                "breaking",
+                "shocking",
+                "secret",
+                "exposed",
+                "anonymous",
+                "doctors",
+                "hidden",
+                "media"
+            ],
+            "top_evidence": [
+                {
+                    "source": "LIAR2 Enhanced | facebook posts | corrections and updates;public health;facebook fact-checks;coronavirus",
+                    "text": "Claim: Fauci's emails leaked.. Fact-check rating: false. Speaker or source: facebook posts. Subject: corrections and updates;public health;facebook fact-checks;coronavirus. Date: June 2, 2021. Context: a Facebook post. Justification: A leak happens when someone who has worked in government, such as an employee or contractor, shares secret information with the public . Whether a leak is illegal depends on the information that\u2019s leaked. It\u2019s a crime, for example, to leak national defense secrets to help another country. Well-known examples of actual leaks : the documents published by Wikileaks that were leaked by U.S. Army intelligence analyst Chelsea Manning, and 1.5 million documents that were leaked to journalists by former NSA contractor Edward Snowden. We rate claims that Fauci\u2019s emails leaked .",
+                    "relevance_score": 0.5149,
+                    "evidence_label": "NOT_ENOUGH_INFO"
+                },
+                {
+                    "source": "LIAR2 Enhanced | special operations opsec education fund | foreign policy;message machine 2012;military;terrorism",
+                    "text": "Claim: The Obama administration \"leaked information, deliberately or otherwise, that led to the identification of the Pakistani doctor that helped us in achieving our goals and killing bin Laden.. Fact-check rating: false. Speaker or source: special operations opsec education fund. Subject: foreign policy;message machine 2012;military;terrorism. Date: August 15, 2012. Context: a web video. Justification: The Special Operations - OPSEC Education Fund said, \"This administration leaked information, deliberately or otherwise, that led to the identification of the Pakistani doctor that helped us in achieving our goals and killing bin Laden.\" The OPSEC group provides no to support its , and journalists close to the scene in Abbottabad say it was the Pakistanis, not the Americans, who identified the doctor. The bin Laden raid triggered the ISI investigation, not anything said by U.S. officials. In fact, the CIA had urged the doctor to leave the country and when Pakistan provided the name of the doctor, US officials tried to prevent it being published. We see no that it was the Obama administration that leaked the name. We rate it .",
+                    "relevance_score": 0.5092,
+                    "evidence_label": "NOT_ENOUGH_INFO"
+                },
+                {
+                    "source": "LIAR2 Enhanced | bloggers | fake news;facebook fact-checks;coronavirus",
+                    "text": "Claim: Says Italy arrested a doctor \"for intentionally killing over 3,000 coronavirus patients.. Fact-check rating: pants-fire. Speaker or source: bloggers. Subject: fake news;facebook fact-checks;coronavirus. Date: March 31, 2020. Context: a blog post. Justification: That\u2019s because it\u2019s not a real news story. The photo of the man in the blog post is from the Anderson, Ind., newspaper, the Herald Bulletin, which reported in 2014 on the arrest of a physician charged with several drug offenses. A doctor accused of murdering more than 3,000 people, not to mention coronavirus patients, would draw wide media attention. And yet searching for information about Dr. Sergio Kerr, we found no such reports. We rate this blog post .",
+                    "relevance_score": 0.498,
+                    "evidence_label": "NOT_ENOUGH_INFO"
+                }
+            ],
+            "explanation": "The final label is 'Misleading'. The classifier label was 'Likely Fake' with confidence 1.0. The current risk level is 'Medium Risk'. This prediction was generated using the Fine-tuned DistilBERT 512. At this stage, the classifier found patterns closer to fake-news articles seen in the ISOT training dataset. The claim did not have sufficiently strong retrieved evidence, but the classifier showed high confidence for fake-news style patterns. Therefore, the decision layer marked the content as Misleading rather than treating it as verified fake. The retrieved evidence summary contains 0 usable SUPPORTS, 0 usable REFUTES, and 2 usable NOT_ENOUGH_INFO items. There are 2 usable evidence items and 3 weak matches. The top evidence relevance score is 0.5149. Displayed terms are simple content terms for review. Transformer-specific attribution can be added later using SHAP or attention-based analysis. The final result should be treated as a misinformation risk assessment, not as absolute truth."
+        },
+        {
+            "case_id": "TC05_NEUTRAL_ARTICLE",
+            "description": "Neutral article-style input",
+            "status": "passed",
+            "input_text": "The government announced a new digital public service platform on Monday. Officials said the platform will be introduced in phases and will initially cover selected cities. According to the ministry, the system is expected to reduce paperwork and improve citizen access to public services. Independent experts said the impact will depend on implementation quality, data privacy safeguards, and adoption by local departments.",
+            "input_type": "article",
+            "expected_final_label": "Likely Real",
+            "actual_final_label": "Likely Real",
+            "expected_risk_label": "Very Low Risk",
+            "actual_risk_label": "Very Low Risk",
+            "final_label": "Likely Real",
+            "risk_score": 0.1773,
+            "risk_label": "Very Low Risk",
+            "model_used": "Fine-tuned DistilBERT 512",
+            "classifier_confidence": 0.8527,
+            "classifier_probabilities": {
+                "real": 0.8527,
+                "fake": 0.1473
+            },
+            "raw_class": 0,
+            "evidence_summary": {
+                "retrieved_count": 5,
+                "usable_evidence_count": 0,
+                "weak_evidence_count": 5,
+                "supports_count": 0,
+                "refutes_count": 0,
+                "not_enough_info_count": 0,
+                "unknown_count": 0,
+                "strong_supports_count": 0,
+                "strong_refutes_count": 0,
+                "support_max_relevance": 0.0,
+                "refute_max_relevance": 0.0,
+                "not_enough_info_max_relevance": 0.0,
+                "top_evidence_label": "NOT_ENOUGH_INFO",
+                "top_relevance_score": 0.4657,
+                "minimum_relevance_required": 0.5,
+                "strong_evidence_relevance_required": 0.65,
+                "minimum_aligned_evidence_count": 2,
+                "has_strong_support": false,
+                "has_strong_refute": false
+            },
+            "content_terms": [
+                "government",
+                "announced",
+                "new",
+                "digital",
+                "public",
+                "service",
+                "platform",
+                "monday"
+            ],
+            "top_evidence": [
+                {
+                    "source": "LIAR2 Enhanced | tiktok posts",
+                    "text": "Claim: In America our own (central bank digital currency) system is going to be launching July 1. It's called the FedNow payment system.. Fact-check rating: false. Speaker or source: tiktok posts. Date: April 6, 2023. Context: a TikTok video. Justification: The difference is that a central bank digital currency would be a liability of the Federal Reserve rather than commercial banks. The Federal Reserve said central bank digital currency, if implemented, would not replace paper currency and that protecting the privacy of consumers is critical. Experts have told PolitiFact that current U.S. laws do not allow the kind of surveillance and control that the video claims the government would possess with a central digital bank currency system. We rate the that, \"In America our own (central bank digital currency) system is going to be launching July 1. It\u2019s called the FedNow payment system,\" .",
+                    "relevance_score": 0.4657,
+                    "evidence_label": "NOT_ENOUGH_INFO"
+                },
+                {
+                    "source": "LIAR2 Enhanced | senior citizens league | health care;technology;privacy issues",
+                    "text": "Claim: A \"massive\" federal computer network will make your medical records available to \"millions of people\" with a \"complete lack of privacy and confidentiality,\" while doctors and hospitals who don't take part face \"stiff penalties.. Fact-check rating: barely-true. Speaker or source: senior citizens league. Subject: health care;technology;privacy issues. Date: October 1, 2009. Context: a letter to members. Justification: The Senior Citizens League has a point that HIT presents unprecedented challenges in privacy and security, and that strategies to keep up with these threats continue to evolve. However, the group significantly overstates the degree to which HIT is intended to collect medical data in one place and the extent to which users will be able to poke around records that they don't have a legitimate need to access. It's to say that there will be a \"complete lack of privacy or confidentiality;\" laws against unauthorized use are already in place, and federal officials have explicitly made privacy a high priority. Finally, the penalties against nonparticipation that the group cites begin in 2015 \u2014 after several years in which providers can receive financial bonuses for participating. On balance, we find the group's claims .",
+                    "relevance_score": 0.4504,
+                    "evidence_label": "NOT_ENOUGH_INFO"
+                },
+                {
+                    "source": "LIAR2 Enhanced | facebook posts | facebook fact-checks",
+                    "text": "Claim: All banks will soon have to turn over all coins to federal government ahead of pivot to using only electronic transactions.. Fact-check rating: false. Speaker or source: facebook posts. Subject: facebook fact-checks. Date: September 13, 2022. Context: a post on Facebook. Justification: A Sept. 13 Facebook post claimed without that all American banks will soon have to turn over all coins to the federal government ahead of transitioning to a universal electronic-only payment protocol. The post appears to be based on out-of-context information about an instant payment program, called FedNow Service, which is in the pilot stages and expected to be more widely available in mid-2023. The program is not mandated and participating banks don\u2019t have to hand over their coins to the federal government. We rate this .",
+                    "relevance_score": 0.4501,
+                    "evidence_label": "NOT_ENOUGH_INFO"
+                }
+            ],
+            "explanation": "The final label is 'Likely Real'. The classifier label was 'Likely Real' with confidence 0.8527. The current risk level is 'Very Low Risk'. This prediction was generated using the Fine-tuned DistilBERT 512. At this stage, the classifier found patterns closer to real-news articles seen in the ISOT training dataset. The final label was produced by combining the classifier output with the retrieved evidence quality. The retrieved evidence summary contains 0 usable SUPPORTS, 0 usable REFUTES, and 0 usable NOT_ENOUGH_INFO items. There are 0 usable evidence items and 5 weak matches. The top evidence relevance score is 0.4657. Displayed terms are simple content terms for review. Transformer-specific attribution can be added later using SHAP or attention-based analysis. The final result should be treated as a misinformation risk assessment, not as absolute truth."
+        }
+    ]
+}

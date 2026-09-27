@@ -1,0 +1,287 @@
+{
+    "generated_at": "2026-06-23T20:55:01.316638",
+    "api_url": "http://127.0.0.1:8000/api/v1/predict",
+    "total_cases": 5,
+    "passed_cases": 5,
+    "failed_cases": 0,
+    "test_outputs": [
+        {
+            "case_id": "TC01_SUPPORT_CLAIM",
+            "description": "Claim with strong FEVER support evidence",
+            "status": "passed",
+            "input_text": "Warren Buffett was born in a state.",
+            "input_type": "claim",
+            "final_label": "Likely Real",
+            "risk_score": 0.4,
+            "risk_label": "Low Risk",
+            "baseline_confidence": 0.9998,
+            "baseline_probabilities": {
+                "real": 0.0002,
+                "fake": 0.9998
+            },
+            "evidence_summary": {
+                "retrieved_count": 5,
+                "usable_evidence_count": 5,
+                "weak_evidence_count": 0,
+                "supports_count": 3,
+                "refutes_count": 1,
+                "not_enough_info_count": 1,
+                "unknown_count": 0,
+                "top_evidence_label": "SUPPORTS",
+                "top_relevance_score": 0.7962,
+                "minimum_relevance_required": 0.5
+            },
+            "influential_terms": [
+                "warren",
+                "buffett",
+                "born",
+                "state"
+            ],
+            "top_evidence": [
+                {
+                    "source": "Warren_Buffett",
+                    "text": "Claim: Warren Buffett was born in a state.. Evidence source: Warren_Buffett. Label: SUPPORTS.",
+                    "relevance_score": 0.7962,
+                    "evidence_label": "SUPPORTS"
+                },
+                {
+                    "source": "Omaha,_Nebraska",
+                    "text": "Claim: Warren Buffett was born in a state.. Evidence source: Omaha,_Nebraska. Label: SUPPORTS.",
+                    "relevance_score": 0.7754,
+                    "evidence_label": "SUPPORTS"
+                },
+                {
+                    "source": "Warren_Buffett",
+                    "text": "Claim: Warren Buffett graduated from the University of Nebraska-Lincoln.. Evidence source: Warren_Buffett. Label: REFUTES.",
+                    "relevance_score": 0.5781,
+                    "evidence_label": "REFUTES"
+                }
+            ],
+            "explanation": "The final label is 'Likely Real'. The classifier label was 'Likely Fake' with confidence 0.9998. The current risk level is 'Low Risk'. This prediction was generated using the Fine-tuned DistilBERT 512. At this stage, the classifier found patterns closer to fake-news articles seen in the ISOT training dataset. However, the evidence-aware decision layer found more usable SUPPORTS evidence than REFUTES evidence, so the final label was marked Likely Real. The retrieved evidence summary contains 3 usable SUPPORTS, 1 usable REFUTES, and 1 usable NOT_ENOUGH_INFO items. There are 5 usable evidence items and 0 weak matches. The top evidence relevance score is 0.7962. Displayed terms are simple content terms for review. Transformer-specific attribution can be added later using SHAP or attention-based analysis. The final result should be treated as a misinformation risk assessment, not as absolute truth."
+        },
+        {
+            "case_id": "TC02_WEAK_EVIDENCE_CLAIM",
+            "description": "Known factual claim but weak retrieval evidence in current FEVER subset",
+            "status": "passed",
+            "input_text": "Barack Obama was born in Hawaii.",
+            "input_type": "claim",
+            "final_label": "Uncertain",
+            "risk_score": 0.5,
+            "risk_label": "Medium Risk",
+            "baseline_confidence": 0.9999,
+            "baseline_probabilities": {
+                "real": 0.0001,
+                "fake": 0.9999
+            },
+            "evidence_summary": {
+                "retrieved_count": 5,
+                "usable_evidence_count": 0,
+                "weak_evidence_count": 5,
+                "supports_count": 0,
+                "refutes_count": 0,
+                "not_enough_info_count": 0,
+                "unknown_count": 0,
+                "top_evidence_label": "SUPPORTS",
+                "top_relevance_score": 0.4672,
+                "minimum_relevance_required": 0.5
+            },
+            "influential_terms": [
+                "barack",
+                "obama",
+                "born",
+                "hawaii"
+            ],
+            "top_evidence": [
+                {
+                    "source": "Aaliyah",
+                    "text": "Claim: Aaliyah was born in New York.. Evidence source: Aaliyah. Label: SUPPORTS.",
+                    "relevance_score": 0.4672,
+                    "evidence_label": "SUPPORTS"
+                },
+                {
+                    "source": "Omaha,_Nebraska",
+                    "text": "Claim: Warren Buffett was born in a state.. Evidence source: Omaha,_Nebraska. Label: SUPPORTS.",
+                    "relevance_score": 0.4667,
+                    "evidence_label": "SUPPORTS"
+                },
+                {
+                    "source": "Aaliyah",
+                    "text": "Claim: Aaliyah was born in Brooklyn.. Evidence source: Aaliyah. Label: SUPPORTS.",
+                    "relevance_score": 0.4656,
+                    "evidence_label": "SUPPORTS"
+                }
+            ],
+            "explanation": "The final label is 'Uncertain'. The classifier label was 'Likely Fake' with confidence 0.9999. The current risk level is 'Medium Risk'. This prediction was generated using the Fine-tuned DistilBERT 512. At this stage, the classifier found patterns closer to fake-news articles seen in the ISOT training dataset. Because no sufficiently relevant evidence was found, the decision layer marked the claim as Uncertain rather than trusting the classifier alone. The retrieved evidence summary contains 0 usable SUPPORTS, 0 usable REFUTES, and 0 usable NOT_ENOUGH_INFO items. There are 0 usable evidence items and 5 weak matches. The top evidence relevance score is 0.4672. Displayed terms are simple content terms for review. Transformer-specific attribution can be added later using SHAP or attention-based analysis. The final result should be treated as a misinformation risk assessment, not as absolute truth."
+        },
+        {
+            "case_id": "TC03_REFUTATION_STYLE_CLAIM",
+            "description": "Claim likely to require refutation-style evidence",
+            "status": "passed",
+            "input_text": "The Eiffel Tower is located in Berlin.",
+            "input_type": "claim",
+            "final_label": "Uncertain",
+            "risk_score": 0.5,
+            "risk_label": "Medium Risk",
+            "baseline_confidence": 0.5346,
+            "baseline_probabilities": {
+                "real": 0.5346,
+                "fake": 0.4654
+            },
+            "evidence_summary": {
+                "retrieved_count": 5,
+                "usable_evidence_count": 0,
+                "weak_evidence_count": 5,
+                "supports_count": 0,
+                "refutes_count": 0,
+                "not_enough_info_count": 0,
+                "unknown_count": 0,
+                "top_evidence_label": "NOT_ENOUGH_INFO",
+                "top_relevance_score": 0.4818,
+                "minimum_relevance_required": 0.5
+            },
+            "influential_terms": [
+                "eiffel",
+                "tower",
+                "located",
+                "berlin"
+            ],
+            "top_evidence": [
+                {
+                    "source": "FEVER",
+                    "text": "Claim: Haifa is home to the Eiffel Tower.. Label: NOT_ENOUGH_INFO.",
+                    "relevance_score": 0.4818,
+                    "evidence_label": "NOT_ENOUGH_INFO"
+                },
+                {
+                    "source": "Berlin",
+                    "text": "Claim: Berlin is a place.. Evidence source: Berlin. Label: SUPPORTS.",
+                    "relevance_score": 0.4745,
+                    "evidence_label": "SUPPORTS"
+                },
+                {
+                    "source": "Berlin_Wall",
+                    "text": "Claim: The Berlin Wall was a dividing structure made of concrete.. Evidence source: Berlin_Wall. Label: SUPPORTS.",
+                    "relevance_score": 0.4555,
+                    "evidence_label": "SUPPORTS"
+                }
+            ],
+            "explanation": "The final label is 'Uncertain'. The classifier label was 'Likely Real' with confidence 0.5346. The current risk level is 'Medium Risk'. This prediction was generated using the Fine-tuned DistilBERT 512. At this stage, the classifier found patterns closer to real-news articles seen in the ISOT training dataset. Because no sufficiently relevant evidence was found, the decision layer marked the claim as Uncertain rather than trusting the classifier alone. The retrieved evidence summary contains 0 usable SUPPORTS, 0 usable REFUTES, and 0 usable NOT_ENOUGH_INFO items. There are 0 usable evidence items and 5 weak matches. The top evidence relevance score is 0.4818. Displayed terms are simple content terms for review. Transformer-specific attribution can be added later using SHAP or attention-based analysis. The final result should be treated as a misinformation risk assessment, not as absolute truth."
+        },
+        {
+            "case_id": "TC04_SENSATIONAL_CLAIM",
+            "description": "Sensational misinformation-style short claim",
+            "status": "passed",
+            "input_text": "Breaking shocking secret exposed by anonymous doctors and hidden media sources.",
+            "input_type": "claim",
+            "final_label": "Misleading",
+            "risk_score": 0.65,
+            "risk_label": "Medium Risk",
+            "baseline_confidence": 1.0,
+            "baseline_probabilities": {
+                "real": 0.0,
+                "fake": 1.0
+            },
+            "evidence_summary": {
+                "retrieved_count": 5,
+                "usable_evidence_count": 0,
+                "weak_evidence_count": 5,
+                "supports_count": 0,
+                "refutes_count": 0,
+                "not_enough_info_count": 0,
+                "unknown_count": 0,
+                "top_evidence_label": "NOT_ENOUGH_INFO",
+                "top_relevance_score": 0.4612,
+                "minimum_relevance_required": 0.5
+            },
+            "influential_terms": [
+                "breaking",
+                "shocking",
+                "secret",
+                "exposed",
+                "anonymous",
+                "doctors",
+                "hidden",
+                "media"
+            ],
+            "top_evidence": [
+                {
+                    "source": "FEVER",
+                    "text": "Claim: The Secret Life of Us was filmed in Russia.. Label: NOT_ENOUGH_INFO.",
+                    "relevance_score": 0.4612,
+                    "evidence_label": "NOT_ENOUGH_INFO"
+                },
+                {
+                    "source": "The_Doctor_-LRB-Doctor_Who-RRB-",
+                    "text": "Claim: The Twelfth Doctor is from a long-running television show.. Evidence source: The_Doctor_-LRB-Doctor_Who-RRB-. Label: SUPPORTS.",
+                    "relevance_score": 0.458,
+                    "evidence_label": "SUPPORTS"
+                },
+                {
+                    "source": "Doctor_Who",
+                    "text": "Claim: Doctor Who is a British television show.. Evidence source: Doctor_Who. Label: SUPPORTS.",
+                    "relevance_score": 0.4577,
+                    "evidence_label": "SUPPORTS"
+                }
+            ],
+            "explanation": "The final label is 'Misleading'. The classifier label was 'Likely Fake' with confidence 1.0. The current risk level is 'Medium Risk'. This prediction was generated using the Fine-tuned DistilBERT 512. At this stage, the classifier found patterns closer to fake-news articles seen in the ISOT training dataset. The claim did not have sufficiently strong retrieved evidence, but the classifier showed high confidence for fake-news style patterns. Therefore, the decision layer marked the content as Misleading rather than treating it as verified fake. The retrieved evidence summary contains 0 usable SUPPORTS, 0 usable REFUTES, and 0 usable NOT_ENOUGH_INFO items. There are 0 usable evidence items and 5 weak matches. The top evidence relevance score is 0.4612. Displayed terms are simple content terms for review. Transformer-specific attribution can be added later using SHAP or attention-based analysis. The final result should be treated as a misinformation risk assessment, not as absolute truth."
+        },
+        {
+            "case_id": "TC05_NEUTRAL_ARTICLE",
+            "description": "Neutral article-style input",
+            "status": "passed",
+            "input_text": "The government announced a new digital public service platform on Monday. Officials said the platform will be introduced in phases and will initially cover selected cities. According to the ministry, the system is expected to reduce paperwork and improve citizen access to public services. Independent experts said the impact will depend on implementation quality, data privacy safeguards, and adoption by local departments.",
+            "input_type": "article",
+            "final_label": "Likely Real",
+            "risk_score": 0.1773,
+            "risk_label": "Very Low Risk",
+            "baseline_confidence": 0.8527,
+            "baseline_probabilities": {
+                "real": 0.8527,
+                "fake": 0.1473
+            },
+            "evidence_summary": {
+                "retrieved_count": 5,
+                "usable_evidence_count": 0,
+                "weak_evidence_count": 5,
+                "supports_count": 0,
+                "refutes_count": 0,
+                "not_enough_info_count": 0,
+                "unknown_count": 0,
+                "top_evidence_label": "SUPPORTS",
+                "top_relevance_score": 0.4409,
+                "minimum_relevance_required": 0.5
+            },
+            "influential_terms": [
+                "government",
+                "announced",
+                "new",
+                "digital",
+                "public",
+                "service",
+                "platform",
+                "monday"
+            ],
+            "top_evidence": [
+                {
+                    "source": "Internet",
+                    "text": "Claim: The internet consists of private, public, academic, firm, and government networks.. Evidence source: Internet. Label: SUPPORTS.",
+                    "relevance_score": 0.4409,
+                    "evidence_label": "SUPPORTS"
+                },
+                {
+                    "source": "Google",
+                    "text": "Claim: Google has received significant criticism for privacy issues.. Evidence source: Google. Label: SUPPORTS.",
+                    "relevance_score": 0.4226,
+                    "evidence_label": "SUPPORTS"
+                },
+                {
+                    "source": "Motorola",
+                    "text": "Claim: Motorola does not have business and government customers.. Evidence source: Motorola. Label: SUPPORTS.",
+                    "relevance_score": 0.4199,
+                    "evidence_label": "SUPPORTS"
+                }
+            ],
+            "explanation": "The final label is 'Likely Real'. The classifier label was 'Likely Real' with confidence 0.8527. The current risk level is 'Very Low Risk'. This prediction was generated using the Fine-tuned DistilBERT 512. At this stage, the classifier found patterns closer to real-news articles seen in the ISOT training dataset. The final label was produced by combining the classifier output with the retrieved evidence quality. The retrieved evidence summary contains 0 usable SUPPORTS, 0 usable REFUTES, and 0 usable NOT_ENOUGH_INFO items. There are 0 usable evidence items and 5 weak matches. The top evidence relevance score is 0.4409. Displayed terms are simple content terms for review. Transformer-specific attribution can be added later using SHAP or attention-based analysis. The final result should be treated as a misinformation risk assessment, not as absolute truth."
+        }
+    ]
+}

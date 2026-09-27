@@ -1,0 +1,140 @@
+{
+  "generated_at": "2026-07-06T08:53:05.722276",
+  "api_url": "http://127.0.0.1:8000/api/v1/predict",
+  "test_type": "all_ui_inference_modes_test",
+  "test_text": "The Eiffel Tower is located in Paris.",
+  "total_modes": 7,
+  "passed_modes": 7,
+  "failed_modes": 0,
+  "outputs": [
+    {
+      "ui_label": "Traditional ML - Logistic Regression",
+      "mode": "traditional_lr",
+      "status": "passed",
+      "actual_label": "Likely Fake",
+      "actual_risk_label": "Medium Risk",
+      "model_used": "TF-IDF + Logistic Regression",
+      "slm_verification": {},
+      "checks": {
+        "has_label": true,
+        "has_risk": true,
+        "has_model_used": true,
+        "slm_expectation_ok": true
+      }
+    },
+    {
+      "ui_label": "Traditional ML - Linear SVM",
+      "mode": "traditional_svm",
+      "status": "passed",
+      "actual_label": "Likely Fake",
+      "actual_risk_label": "Medium Risk",
+      "model_used": "TF-IDF + Linear SVM",
+      "slm_verification": {},
+      "checks": {
+        "has_label": true,
+        "has_risk": true,
+        "has_model_used": true,
+        "slm_expectation_ok": true
+      }
+    },
+    {
+      "ui_label": "Transformer only - DistilBERT 512",
+      "mode": "distilbert",
+      "status": "passed",
+      "actual_label": "Likely Fake",
+      "actual_risk_label": "Medium Risk",
+      "model_used": "Fine-tuned DistilBERT 512",
+      "slm_verification": {},
+      "checks": {
+        "has_label": true,
+        "has_risk": true,
+        "has_model_used": true,
+        "slm_expectation_ok": true
+      }
+    },
+    {
+      "ui_label": "DistilBERT + Local RAG",
+      "mode": "distilbert_local_rag",
+      "status": "passed",
+      "actual_label": "Uncertain",
+      "actual_risk_label": "Medium Risk",
+      "model_used": "Fine-tuned DistilBERT 512",
+      "slm_verification": {},
+      "checks": {
+        "has_label": true,
+        "has_risk": true,
+        "has_model_used": true,
+        "slm_expectation_ok": true
+      }
+    },
+    {
+      "ui_label": "DistilBERT + Hybrid Web Evidence",
+      "mode": "distilbert_hybrid",
+      "status": "passed",
+      "actual_label": "Uncertain",
+      "actual_risk_label": "Medium Risk",
+      "model_used": "Fine-tuned DistilBERT 512",
+      "slm_verification": {},
+      "checks": {
+        "has_label": true,
+        "has_risk": true,
+        "has_model_used": true,
+        "slm_expectation_ok": true
+      }
+    },
+    {
+      "ui_label": "SLM-assisted Local Verification",
+      "mode": "slm_assisted_local",
+      "status": "passed",
+      "actual_label": "Likely Real",
+      "actual_risk_label": "Low Risk",
+      "model_used": "Fine-tuned DistilBERT 512",
+      "slm_verification": {
+        "enabled": true,
+        "used": true,
+        "provider": "lmstudio",
+        "model": "qwen/qwen3.5-9b",
+        "stance": "SUPPORTS",
+        "confidence": 0.95,
+        "reason": "Evidence 2 explicitly states the Eiffel Tower is in Paris.",
+        "used_evidence_indices": [
+          2
+        ],
+        "error": null
+      },
+      "checks": {
+        "has_label": true,
+        "has_risk": true,
+        "has_model_used": true,
+        "slm_expectation_ok": true
+      }
+    },
+    {
+      "ui_label": "SLM-assisted Hybrid Verification",
+      "mode": "slm_assisted_hybrid",
+      "status": "passed",
+      "actual_label": "Likely Real",
+      "actual_risk_label": "Low Risk",
+      "model_used": "Fine-tuned DistilBERT 512",
+      "slm_verification": {
+        "enabled": true,
+        "used": true,
+        "provider": "lmstudio",
+        "model": "qwen/qwen3.5-9b",
+        "stance": "SUPPORTS",
+        "confidence": 0.95,
+        "reason": "Evidence 2 explicitly states the Eiffel Tower is in Paris.",
+        "used_evidence_indices": [
+          2
+        ],
+        "error": null
+      },
+      "checks": {
+        "has_label": true,
+        "has_risk": true,
+        "has_model_used": true,
+        "slm_expectation_ok": true
+      }
+    }
+  ]
+}

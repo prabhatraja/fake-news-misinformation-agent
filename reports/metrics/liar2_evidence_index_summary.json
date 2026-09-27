@@ -1,0 +1,28 @@
+{
+    "collection_name": "liar2_justification_evidence",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "records_indexed": 20665,
+    "chroma_path": "C:\\Prabhat\\PES\\Final Project\\fake-news-misinformation-agent\\data\\embeddings\\chroma_liar2_justifications",
+    "source_files": {
+        "train": "C:\\Prabhat\\PES\\Final Project\\fake-news-misinformation-agent\\data\\raw\\liar2\\liar2_train.csv",
+        "validation": "C:\\Prabhat\\PES\\Final Project\\fake-news-misinformation-agent\\data\\raw\\liar2\\liar2_validation.csv"
+    },
+    "splits_indexed": {
+        "train": 18368,
+        "validation": 2297
+    },
+    "liar2_labels": {
+        "true": 2326,
+        "false": 5945,
+        "pants-fire": 2728,
+        "mostly-true": 3086,
+        "barely-true": 3243,
+        "half-true": 3337
+    },
+    "evidence_labels": {
+        "SUPPORTS": 5412,
+        "REFUTES": 8673,
+        "NOT_ENOUGH_INFO": 6580
+    },
+    "note": "Only LIAR2 train and validation splits are indexed. The test split is intentionally excluded to avoid evaluation leakage."
+}

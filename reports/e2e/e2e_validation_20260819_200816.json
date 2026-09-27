@@ -1,0 +1,215 @@
+{
+  "timestamp": "2026-08-19T20:08:16",
+  "base_url": "http://127.0.0.1:8000",
+  "skip_external": true,
+  "total_cases": 8,
+  "passed_cases": 8,
+  "critical_failures": 0,
+  "warnings": 0,
+  "results": [
+    {
+      "name": "health_check",
+      "passed": true,
+      "critical": true,
+      "details": {
+        "status": "ok",
+        "app_name": "Fake News Misinformation Detection Agent",
+        "version": "0.1.0",
+        "environment": "local"
+      }
+    },
+    {
+      "name": "predict_all_7_inference_modes",
+      "passed": true,
+      "critical": true,
+      "details": {
+        "outputs": [
+          {
+            "mode": "traditional_lr",
+            "label": "Likely Fake",
+            "risk": "Medium Risk",
+            "model_used": "TF-IDF + Logistic Regression",
+            "slm_used": null,
+            "slm_stance": null,
+            "slm_error": null
+          },
+          {
+            "mode": "traditional_svm",
+            "label": "Likely Fake",
+            "risk": "Medium Risk",
+            "model_used": "TF-IDF + Linear SVM",
+            "slm_used": null,
+            "slm_stance": null,
+            "slm_error": null
+          },
+          {
+            "mode": "distilbert",
+            "label": "Likely Fake",
+            "risk": "Medium Risk",
+            "model_used": "Fine-tuned DistilBERT 512",
+            "slm_used": null,
+            "slm_stance": null,
+            "slm_error": null
+          },
+          {
+            "mode": "distilbert_local_rag",
+            "label": "Uncertain",
+            "risk": "Medium Risk",
+            "model_used": "Fine-tuned DistilBERT 512",
+            "slm_used": null,
+            "slm_stance": null,
+            "slm_error": null
+          },
+          {
+            "mode": "distilbert_hybrid",
+            "label": "Uncertain",
+            "risk": "Medium Risk",
+            "model_used": "Fine-tuned DistilBERT 512",
+            "slm_used": null,
+            "slm_stance": null,
+            "slm_error": null
+          },
+          {
+            "mode": "slm_assisted_local",
+            "label": "Likely Real",
+            "risk": "Low Risk",
+            "model_used": "Fine-tuned DistilBERT 512",
+            "slm_used": true,
+            "slm_stance": "SUPPORTS",
+            "slm_error": null
+          },
+          {
+            "mode": "slm_assisted_hybrid",
+            "label": "Likely Real",
+            "risk": "Low Risk",
+            "model_used": "Fine-tuned DistilBERT 512",
+            "slm_used": true,
+            "slm_stance": "SUPPORTS",
+            "slm_error": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "analyze_plain_text_claim",
+      "passed": true,
+      "critical": true,
+      "details": {
+        "input_kind": "plain_text",
+        "overall_label": "Likely Real",
+        "overall_risk": "Low Risk",
+        "claims": 1
+      }
+    },
+    {
+      "name": "analyze_url_wikipedia_regression",
+      "passed": true,
+      "critical": false,
+      "details": {
+        "skipped": "--skip-external used"
+      }
+    },
+    {
+      "name": "analyze_youtube_url_best_effort",
+      "passed": true,
+      "critical": false,
+      "details": {
+        "skipped": "--skip-external used"
+      }
+    },
+    {
+      "name": "analyze_twitter_x_detection_best_effort",
+      "passed": true,
+      "critical": false,
+      "details": {
+        "skipped": "--skip-external used"
+      }
+    },
+    {
+      "name": "analyze_recirculated_media_claim",
+      "passed": true,
+      "critical": true,
+      "details": {
+        "overall_label": "Uncertain",
+        "overall_risk": "Medium Risk",
+        "temporal": {
+          "published_date": "",
+          "published_year": null,
+          "source_age_years": null,
+          "years_mentioned": [
+            2020
+          ],
+          "event_year_guess": 2020,
+          "time_scope": "historical_or_recirculated_media",
+          "relative_time_cues": [
+            "today"
+          ],
+          "relative_time_windows": [
+            {
+              "cue": "today",
+              "approx_start": "2026-08-19",
+              "approx_end": "2026-08-19"
+            }
+          ],
+          "event_terms": [
+            "protest",
+            "video_claim"
+          ],
+          "recirculation_risk": true,
+          "requires_historical_evidence": true,
+          "source_type": "plain_text",
+          "notes": [
+            "Temporal context is a supporting signal used to improve evidence retrieval and interpretation.",
+            "Relative time expressions were detected; current-date interpretation can change over time.",
+            "Possible old-media or recirculated-content context detected."
+          ]
+        },
+        "focus_values": [
+          "recirculated_media"
+        ],
+        "limitations": [
+          "Possible old or recirculated media context detected. Verify whether the source is being shared with accurate date/context."
+        ]
+      }
+    },
+    {
+      "name": "analyze_file_mixed_claim_context_isolation",
+      "passed": true,
+      "critical": true,
+      "details": {
+        "overall_label": "Likely Fake",
+        "overall_risk": "High Risk",
+        "claims": [
+          {
+            "claim": "The Eiffel Tower is located in Paris.",
+            "label": "Likely Real",
+            "risk": "Low Risk",
+            "slm_stance": "SUPPORTS",
+            "focus": "standard",
+            "retrieval_query": null
+          },
+          {
+            "claim": "The Eiffel Tower was constructed between 1887 and 1889.",
+            "label": "Likely Real",
+            "risk": "Low Risk",
+            "slm_stance": "SUPPORTS",
+            "focus": "historical_event",
+            "retrieval_query": null
+          },
+          {
+            "claim": "A viral video claims Iran tested a nuclear bomb last week.",
+            "label": "Likely Fake",
+            "risk": "High Risk",
+            "slm_stance": "REFUTES",
+            "focus": "recirculated_media",
+            "retrieval_query": null
+          }
+        ],
+        "limitations": [
+          "Short multi-sentence content was split into separate verifiable claims.",
+          "Possible old or recirculated media context detected. Verify whether the source is being shared with accurate date/context."
+        ]
+      }
+    }
+  ]
+}

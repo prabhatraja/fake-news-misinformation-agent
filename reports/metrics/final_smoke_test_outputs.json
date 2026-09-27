@@ -1,0 +1,661 @@
+{
+  "generated_at": "2026-07-06T08:53:22.246517",
+  "api_url": "http://127.0.0.1:8000/api/v1/predict",
+  "test_type": "final_project_smoke_test",
+  "total_cases": 6,
+  "passed_cases": 6,
+  "failed_cases": 0,
+  "test_outputs": [
+    {
+      "case_id": "SMOKE01_EIFFEL_PARIS",
+      "status": "passed",
+      "input_text": "The Eiffel Tower is located in Paris.",
+      "inference_mode": "slm_assisted_hybrid",
+      "actual_label": "Likely Real",
+      "actual_risk_label": "Low Risk",
+      "slm_verification": {
+        "enabled": true,
+        "used": true,
+        "provider": "lmstudio",
+        "model": "qwen/qwen3.5-9b",
+        "stance": "SUPPORTS",
+        "confidence": 0.95,
+        "reason": "Evidence 2 explicitly states the Eiffel Tower is in Paris.",
+        "used_evidence_indices": [
+          2
+        ],
+        "error": null
+      },
+      "checks": {
+        "label_ok": true,
+        "risk_ok": true,
+        "slm_used_ok": true,
+        "slm_stance_ok": true,
+        "not_label_ok": true
+      },
+      "result": {
+        "input_text": "The Eiffel Tower is located in Paris.",
+        "input_type": "claim",
+        "predicted_label": "Likely Real",
+        "confidence_score": 0.636,
+        "risk_score": 0.45,
+        "risk_label": "Low Risk",
+        "explanation": "The final label is 'Likely Real'. The classifier label was 'Likely Fake' with confidence 0.636. The current risk level is 'Low Risk'. This prediction was generated using the Fine-tuned DistilBERT 512. At this stage, the classifier found patterns closer to fake-news articles seen in the ISOT training dataset. However, the evidence-aware decision layer found more usable SUPPORTS evidence than REFUTES evidence, so the final label was marked Likely Real. The retrieved evidence summary contains 2 usable SUPPORTS, 0 usable REFUTES, and 2 usable NOT_ENOUGH_INFO items. There are 4 usable evidence items and 1 weak matches. The top evidence relevance score is 0.623. Displayed terms are simple content terms for review. Transformer-specific attribution can be added later using SHAP or attention-based analysis. The SLM-assisted verifier reviewed the retrieved evidence and returned stance 'SUPPORTS' with confidence 0.95. Verifier reason: Evidence 2 explicitly states the Eiffel Tower is in Paris. The final result should be treated as a misinformation risk assessment, not as absolute truth.",
+        "influential_terms": [
+          "eiffel",
+          "tower",
+          "located",
+          "paris"
+        ],
+        "evidence": [
+          {
+            "source": "rappler.com",
+            "text": "# FACT CHECK: Images of Eiffel Tower on fire are AI-generated. **Claim:** Images circulating on social media show the Eiffel Tower in Paris, France, on fire. Claims that the iconic Paris landmark was burning have also spread on Filipino social media, with several users believing the incident to be real. **The bottom line:** Using AI detectors, the images have been determined to be 97.42% machine-generated. **AI and disinformation:** Media watchdogs have long sounded the alarm over the impact of artificial intelligence on the spread of disinformation at scale. In an article by the New York Times, Gordon Crovitz, co-chief executive of NewsGuard, a company that tracks online misinformation, said, \u201cCrafting a new false narrative can now be done at dramatic scale, and much more frequently \u2013 it\u2019s like having AI agents contributing to disinformation.\u201d. Rappler has already published several fact-checks on AI-generated disinformation:. This fact check was reviewed by a member of Rappler\u2019s research team and a senior editor. #### Fact checks on AI-generated content.",
+            "relevance_score": 0.623,
+            "evidence_label": "NOT_ENOUGH_INFO"
+          },
+          {
+            "source": "britannica.com",
+            "text": "# Eiffel Tower. When completed, the Eiffel Tower served as the entrance gateway to the exposition. The Eiffel Tower was initially built to serve as the entrance gateway to the International Exposition of 1889 as well as a testament to French industrial ingenuity. Gustave Eiffel used his advanced knowledge of the behaviour of metal arch and metal truss forms under loading to design a light and airy but strong structure that presaged a revolution in civil engineering and architectural design. Situated on the \u201cLeft Bank,\u201d meaning it is to the south of the Seine River, the storied 7th arrondissement neighbourhood in Paris is home to many other famous tourist attractions, such as the Mus\u00e9e d\u2019Orsay and the Rodin Museum. Take in a top to bottom look at Paris's Eiffel Tower commissioned for the International Exposition of 1889. Take in a top to bottom look at Paris's Eiffel Tower commissioned for the International Exposition of 1889Eiffel Tower, Paris.",
+            "relevance_score": 0.5949,
+            "evidence_label": "SUPPORTS"
+          },
+          {
+            "source": "reuters.com",
+            "text": "Exclusive news, data and analytics for financial market professionals Learn more about Refinitiv. ## Browse World. Image 1: Reuters Fact Check logo. The image, opens new tab shows the Parisian landmark on fire with plumes of smoke billowing from the structure. Livestreams, opens new tabof the landmark, opens new tab, however, show it standing upright with no fire damage as of Jan. 18, at the time of writing. There is no notice of a fire on the landmark\u2019s official website, opens new tab or social, opens new tabmedia, opens new tabchannels, opens new tab. Our Standards: The Thomson Reuters Trust Principles., opens new tab. * July 1, 2026Fact Check categoryFact Check: Counting video not evidence of fraud in Makerfield by-election. * Fact Check categoryFact Check: Counting video not evidence of fraud in Makerfield by-electionJuly 1, 2026. * About Reuters, opens new tab. * Media Center, opens new tab. * #### World-Check, opens new tab.",
+            "relevance_score": 0.4759,
+            "evidence_label": "NOT_ENOUGH_INFO"
+          },
+          {
+            "source": "toureiffel.paris",
+            "text": "The Eiffel Tower is located in the heart of Paris, in the 7th arrondissement, on the Champ de Mars, and is very easy to access. Its official address is: 5 avenue Anatole France, 75007 Paris, France. We recommend taking public transport to come here: metro, RER, or bus. The Eiffel Tower is very well-connected to the metro \u2013 there are three stations in the nearby area. On line 6, the Bir Hakeim station is the closest, less than 10 minutes\u2019 walk from Entrance 1 (All\u00e9e des Refuzniks) of the monument. Metro stations Trocad\u00e9ro (line 9) and Ecole Militaire (line 8) are 15 minutes by foot from the Tower. Another option is line C of the RER train network, which serves the Champ de Mars-Tour Eiffel station, located 5 minutes\u2019 walk from Entrance 1.You can also come by bus: lines 82, 30 and 42 serve stops 5 minutes\u2019 walk from Entrance 2 of the Eiffel Tower (All\u00e9e Jean Paulhan). Bus lines 69 and 86 stop at the Champ de Mars, 7 minutes from Entrance 1. The 72 drops you off near Trocad\u00e9ro, around 15 minutes away by foot. If you want to drive to the area near the Eiffel Tower, we recommend parking in a public parking lot. You have several options for paid parking lots, including the Quai Branly \u2013 Tour Eiffel parking lot located just over 5 minutes by foot from Entrance 2 (All\u00e9e Jean Paulhan). Use our interactive map below to explore the area and see various modes of transport and routes to get to the Eiffel Tower. ... The Eiffel Tower is located in the heart of Paris, in the 7th arrondissement, on the Champ de Mars, and is very easy to access. Its official address is: 5 avenue Anatole France, 75007 Paris, France. We recommend taking public transport to come here: metro, RER, or bus. The Eiffel Tower is very well-connected to the metro \u2013 there are three stations in the nearby area. On line 6, the Bir Hakeim station is the closest, less than 10 minutes\u2019 walk from Entrance 1 (All\u00e9e des Refuzniks) of the monument. Metro stations Trocad\u00e9ro (line 9) and Ecole Militaire (line 8) are 15 minutes by foot from the Tower. Another option is line C of the RER train network, which serves the Champ de Mars-Tour Eiffel station, located 5 minutes\u2019 walk from Entrance 1.You can also come by bus: lines 82, 30 and 42 serve stops 5 minutes\u2019 walk from Entrance 2 of the Eif... ... ## The Eiffel Tower is accessible to all publics on public transport and cars.",
+            "relevance_score": 0.62,
+            "evidence_label": "SUPPORTS"
+          },
+          {
+            "source": "toureiffel.paris",
+            "text": "The OFFICIAL Eiffel Tower website: tickets, ... Eiffel Tower website: tickets, news, info... ... # The Eiffel Tower Welcome on the Official Website ... ! Connect to our mobile visitor's guide, a real ... to find your way around ... about the Tower! ... ://www.toureiffel ... The Eiffel Tower is open in the evening: enjoy a magical visit high above the City of Light in a more relaxed atmosphere. Shorter lines at the ticket counters. ... Head up to the second floor or the top, by elevator or stairs. The best prices are guaranteed on the official Eiffel Tower website. ... Curious about what it\u2019s like inside the Eiffel Tower and how to experience one of Paris\u2019 most famous landmarks? This guide covers Eiffel Tower tickets, views from each floor, Eiffel Tower restaurants, and insider tips to help you plan your visit to Paris. ... the Eiffel Tower ... You can choose to visit the Eiffel tower during the day or at night. We advise you to choose both options because they are very different experiences but each one is as fantastic as the other. You can buy your ticket in advance from our online ticket office to avoid having to queue at the ticket office at the Tower.",
+            "relevance_score": 0.62,
+            "evidence_label": "NOT_ENOUGH_INFO"
+          }
+        ],
+        "disclaimer": "This system supports misinformation risk analysis but should not be treated as the final authority on truth. Retrieved evidence and SLM-assisted verification are supporting signals and should be interpreted with human judgment.",
+        "inference_mode": "slm_assisted_hybrid",
+        "model_used": "Fine-tuned DistilBERT 512",
+        "raw_class": 1,
+        "class_probabilities": {
+          "real": 0.364,
+          "fake": 0.636
+        },
+        "evidence_summary": {
+          "retrieved_count": 5,
+          "usable_evidence_count": 4,
+          "weak_evidence_count": 1,
+          "supports_count": 2,
+          "refutes_count": 0,
+          "not_enough_info_count": 2,
+          "unknown_count": 0,
+          "strong_supports_count": 0,
+          "strong_refutes_count": 0,
+          "support_max_relevance": 0.62,
+          "refute_max_relevance": 0.0,
+          "not_enough_info_max_relevance": 0.623,
+          "top_evidence_label": "NOT_ENOUGH_INFO",
+          "top_relevance_score": 0.623,
+          "minimum_relevance_required": 0.5,
+          "strong_evidence_relevance_required": 0.65,
+          "minimum_aligned_evidence_count": 2,
+          "has_strong_support": false,
+          "has_strong_refute": false
+        },
+        "slm_verification": {
+          "enabled": true,
+          "used": true,
+          "provider": "lmstudio",
+          "model": "qwen/qwen3.5-9b",
+          "stance": "SUPPORTS",
+          "confidence": 0.95,
+          "reason": "Evidence 2 explicitly states the Eiffel Tower is in Paris.",
+          "used_evidence_indices": [
+            2
+          ],
+          "error": null
+        }
+      }
+    },
+    {
+      "case_id": "SMOKE02_EIFFEL_BERLIN",
+      "status": "passed",
+      "input_text": "The Eiffel Tower is located in Berlin.",
+      "inference_mode": "slm_assisted_hybrid",
+      "actual_label": "Likely Fake",
+      "actual_risk_label": "Medium Risk",
+      "slm_verification": {
+        "enabled": true,
+        "used": true,
+        "provider": "lmstudio",
+        "model": "qwen/qwen3.5-9b",
+        "stance": "REFUTES",
+        "confidence": 0.95,
+        "reason": "Evidence states the tower is in Paris, France, contradicting the claim it is in Berlin.",
+        "used_evidence_indices": [
+          3
+        ],
+        "error": null
+      },
+      "checks": {
+        "label_ok": true,
+        "risk_ok": true,
+        "slm_used_ok": true,
+        "slm_stance_ok": true,
+        "not_label_ok": true
+      },
+      "result": {
+        "input_text": "The Eiffel Tower is located in Berlin.",
+        "input_type": "claim",
+        "predicted_label": "Likely Fake",
+        "confidence_score": 0.5346,
+        "risk_score": 0.65,
+        "risk_label": "Medium Risk",
+        "explanation": "The final label is 'Likely Fake'. The classifier label was 'Likely Real' with confidence 0.5346. The current risk level is 'Medium Risk'. This prediction was generated using the Fine-tuned DistilBERT 512. At this stage, the classifier found patterns closer to real-news articles seen in the ISOT training dataset. The final label was produced by combining the classifier output with the retrieved evidence quality. The retrieved evidence summary contains 2 usable SUPPORTS, 1 usable REFUTES, and 2 usable NOT_ENOUGH_INFO items. There are 5 usable evidence items and 0 weak matches. The top evidence relevance score is 0.62. Displayed terms are simple content terms for review. Transformer-specific attribution can be added later using SHAP or attention-based analysis. The SLM-assisted verifier reviewed the retrieved evidence and returned stance 'REFUTES' with confidence 0.95. Verifier reason: Evidence states the tower is in Paris, France, contradicting the claim it is in Berlin. The final result should be treated as a misinformation risk assessment, not as absolute truth.",
+        "influential_terms": [
+          "eiffel",
+          "tower",
+          "located",
+          "berlin"
+        ],
+        "evidence": [
+          {
+            "source": "en.wikipedia.org",
+            "text": "It is named after the engineer Gustave Eiffel, whose company designed and built the tower from 1887 to 1889. Eiffel Tower. Tour Eiffel (French).",
+            "relevance_score": 0.62,
+            "evidence_label": "NOT_ENOUGH_INFO"
+          },
+          {
+            "source": "toureiffel.paris",
+            "text": "The Eiffel Tower was built by Gustave Eiffel for the 1889 Exposition Universelle, which was to celebrate the 100th year anniversary of the French Revolution.",
+            "relevance_score": 0.62,
+            "evidence_label": "NOT_ENOUGH_INFO"
+          },
+          {
+            "source": "triviaquestion.ca",
+            "text": "Is The Eiffel Tower located in Berlin, Germany? - Trivia Question ... ### #1. Is The Eiffel Tower located in Berlin, Germany? ... Correct Answer: The Eiffel Tower is located in Paris, France. ... ## Is The Eiffel Tower located in Berlin, Germany?",
+            "relevance_score": 0.62,
+            "evidence_label": "SUPPORTS"
+          },
+          {
+            "source": "brainly.com",
+            "text": "[FREE] In what city and country can you find the Eiffel Tower? A. London, England B. Berlin, Germany C. Paris, - brainly.com ... # In what city and country can you find the Eiffel Tower?A. London, England B. Berlin, Germany C. Paris, France D. Rome, Italy ... The Eiffel Tower is located in Paris, France, built in 1889 as a symbol of the city. Paris was rebuilt by Baron Haussmann in the 19th century and stands as a primate city in France. The correct option is c. ... The Eiffel Tower is a world-renowned landmark located in Paris, France which corresponds to option c. It was constructed in 1889 and since then, it has become a symbol of the city and is often associated with the city's global reputation as a center of culture and history. ... The Eiffel Tower, completed in 1889, is located in Paris, France, and serves as a prominent symbol of the city. The correct option is C. ... The Eiffel Tower is an iconic landmark located in Paris, France. It was completed in 1889 as the entrance arch to the 1889 World's Fair, known as the Exposition Universelle, which celebrated the 100th anniversary of the French Revolution. The tower was designed by engineer Gustave Eiffel and stands approximately 300 meters tall (1,083 feet). ... known for its art ... The correct answer is C. Paris, France. ... The Eiffel Tower can be compared to other famous landmarks, like the Statue of Liberty in the United States or the Big Ben in London, as they all represent the cultural identity of their respective cities. ... The Eiffel Tower was specifically built for the 1889 World's Fair to demonstrate France's industrial prowess, and it has historical significance due to the events surrounding its construction during the late 19th century.",
+            "relevance_score": 0.62,
+            "evidence_label": "SUPPORTS"
+          },
+          {
+            "source": "toureiffel.paris",
+            "text": "Since she was built, a multitude of rumors and legends have circulated about the Iron Lady. Here, we\u2019ve collected and debunked the craziest of the myths about the Eiffel Tower. ... Montreal\u2019s Mayor, Jean Drapeau, did in fact want to bring the Eiffel Tower to Montreal for the duration of the World\u2019s Fair in that city in 1967. An official request was sent to France and the city of Paris, but that\u2019s as far as it went. ... It is, of course, ... Mont Blanc even ... the top of the Eiffel Tower. The ... the Tower rises to 9 ... there, the distance to the horizon has been calculated at just under ... 7 miles. Although air pollution ... prevents you from seeing that far, it\u2019s still a spectacular ... Another recent urban legend suggests that it\u2019s possible to see the Eiffel Tower from the London ... observation wheel in England, thanks to reduced air pollution that makes the view clearer. This belief is also false. What some people saw was not the Eiffel Tower at all, ... a huge remote-transmission antenna that has a ... shape, but is located in ... suburbs around London. ... Some people believe that the United States gave the Eiffel Tower to France in exchange for the Statue of Liberty, but this is pure make-believe! It\u2019s true that there\u2019s a strong link between the Eiffel Tower and the Statue of Liberty, but it\u2019s 100% Made in France. ... The Statue of Liberty, inaugurated in New York in 1886, was donated by French philanthropists to the United States to commemorate the 100th anniversary of the American Declaration of Independence. It was designed by sculptor Auguste Bartholdi, and its internal structure was developed and built by Gustave Eiffel in his Levallois Perret workshops a few years before he began building his 300-meter tower. ... In the 1920s, Victor Lustig actually sold the Eiffel Tower to Andr\u00e9 Poisson, an insecure businessman who wanted to make a name for himself. The transaction was of course a carefully planned scam, and was a success for the con man who fled as soon as the deal was closed. ... A month later, Lustig tried the subterfuge again, but this time his plan was thwarted by a less gullible buyer. If you\u2019d like to know more about who really owns the Eiffel Tower, click here. And no, it's not for sale!",
+            "relevance_score": 0.62,
+            "evidence_label": "REFUTES"
+          }
+        ],
+        "disclaimer": "This system supports misinformation risk analysis but should not be treated as the final authority on truth. Retrieved evidence and SLM-assisted verification are supporting signals and should be interpreted with human judgment.",
+        "inference_mode": "slm_assisted_hybrid",
+        "model_used": "Fine-tuned DistilBERT 512",
+        "raw_class": 0,
+        "class_probabilities": {
+          "real": 0.5346,
+          "fake": 0.4654
+        },
+        "evidence_summary": {
+          "retrieved_count": 5,
+          "usable_evidence_count": 5,
+          "weak_evidence_count": 0,
+          "supports_count": 2,
+          "refutes_count": 1,
+          "not_enough_info_count": 2,
+          "unknown_count": 0,
+          "strong_supports_count": 0,
+          "strong_refutes_count": 0,
+          "support_max_relevance": 0.62,
+          "refute_max_relevance": 0.62,
+          "not_enough_info_max_relevance": 0.62,
+          "top_evidence_label": "NOT_ENOUGH_INFO",
+          "top_relevance_score": 0.62,
+          "minimum_relevance_required": 0.5,
+          "strong_evidence_relevance_required": 0.65,
+          "minimum_aligned_evidence_count": 2,
+          "has_strong_support": false,
+          "has_strong_refute": false
+        },
+        "slm_verification": {
+          "enabled": true,
+          "used": true,
+          "provider": "lmstudio",
+          "model": "qwen/qwen3.5-9b",
+          "stance": "REFUTES",
+          "confidence": 0.95,
+          "reason": "Evidence states the tower is in Paris, France, contradicting the claim it is in Berlin.",
+          "used_evidence_indices": [
+            3
+          ],
+          "error": null
+        }
+      }
+    },
+    {
+      "case_id": "SMOKE03_NEW_DELHI_CAPITAL",
+      "status": "passed",
+      "input_text": "New Delhi is the capital of India.",
+      "inference_mode": "slm_assisted_hybrid",
+      "actual_label": "Likely Real",
+      "actual_risk_label": "Low Risk",
+      "slm_verification": {
+        "enabled": true,
+        "used": true,
+        "provider": "lmstudio",
+        "model": "qwen/qwen3.5-9b",
+        "stance": "SUPPORTS",
+        "confidence": 1.0,
+        "reason": "Evidence explicitly states New Delhi is the national capital of India.",
+        "used_evidence_indices": [
+          1,
+          2
+        ],
+        "error": null
+      },
+      "checks": {
+        "label_ok": true,
+        "risk_ok": true,
+        "slm_used_ok": true,
+        "slm_stance_ok": true,
+        "not_label_ok": true
+      },
+      "result": {
+        "input_text": "New Delhi is the capital of India.",
+        "input_type": "claim",
+        "predicted_label": "Likely Real",
+        "confidence_score": 0.6298,
+        "risk_score": 0.45,
+        "risk_label": "Low Risk",
+        "explanation": "The final label is 'Likely Real'. The classifier label was 'Likely Real' with confidence 0.6298. The current risk level is 'Low Risk'. This prediction was generated using the Fine-tuned DistilBERT 512. At this stage, the classifier found patterns closer to real-news articles seen in the ISOT training dataset. However, the evidence-aware decision layer found more usable SUPPORTS evidence than REFUTES evidence, so the final label was marked Likely Real. The retrieved evidence summary contains 3 usable SUPPORTS, 0 usable REFUTES, and 2 usable NOT_ENOUGH_INFO items. There are 5 usable evidence items and 0 weak matches. The top evidence relevance score is 0.628. Displayed terms are simple content terms for review. Transformer-specific attribution can be added later using SHAP or attention-based analysis. The SLM-assisted verifier reviewed the retrieved evidence and returned stance 'SUPPORTS' with confidence 1.0. Verifier reason: Evidence explicitly states New Delhi is the national capital of India. The final result should be treated as a misinformation risk assessment, not as absolute truth.",
+        "influential_terms": [
+          "new",
+          "delhi",
+          "capital",
+          "india"
+        ],
+        "evidence": [
+          {
+            "source": "britannica.com",
+            "text": "New Delhi: All India War Memorial arch. Popularly called India Gate, the All India War Memorial arch in New Delhi was designed by Edwin Lutyens. New Delhi is the national capital of India. New Delhi is situated in the north-central part of India on the west bank of the Yamuna River, adjacent to and just south of Old Delhi, the historic centre of Delhi, and within the Delhi national capital territory. In December 1911 King George V of Britain decreed that the capital of British India would be moved from Calcutta (which is today called Kolkata) to Delhi. ### What is New Delhi known for? New Delhi is best known as the location of India\u2019s national government. It is situated in the north-central part of the country on the west bank of the Yamuna River, adjacent to and just south of Delhi city (Old Delhi) and within the Delhi national capital territory. Delhi is a city and national capital territory in north-central India.",
+            "relevance_score": 0.628,
+            "evidence_label": "SUPPORTS"
+          },
+          {
+            "source": "en.wikipedia.org",
+            "text": "New Delhi is the capital city of India and a part of the National Capital Territory of Delhi (NCT). New Delhi is the seat of all three branches of the ...",
+            "relevance_score": 0.62,
+            "evidence_label": "NOT_ENOUGH_INFO"
+          },
+          {
+            "source": "thediplomat.com",
+            "text": "Contrary to the belief of some, New Delhi is not an independent or separate city located near the rest of Delhi, though it is a distinct entity. It is actually one out of the 11 districts that compose the city of Delhi. Central Delhi, otherwise known as Old Delhi, the historical capital of the Mughals, forms ... ancient and modern cities such as ... prastha, the earliest, ... the modern city of Delhi. ... Delhi was the historical capital of the Delhi Sultanate, the first major Muslim empire founded in northern India in 1206. It assumed this position because it lay at the gateway of the Ganges-Yamuna river valley from the direction of Afghanistan and Punjab, where most invaders into the subcontinent came from. It was thus both a terminus for one land route and a hub for land routes going east toward Bengal and south toward the Deccan. After the Mughals conquered the Delhi Sultanate, it became one of their main capitals, along with Agra and Lahore. The British originally ruled India from Calcutta, but moved the capital to the newly built district of New Delhi in 1911 because of the city\u2019s symbolic value in India. ... Due to Delhi\u2019s long history as a capital or the site of multiple capitals, many named after the rulers who built them (for example, Tughlaqabad, Shahjahanabad), it does strike one as somewhat strange that the term \u201cNew Delhi\u201d is used when referring to the capital of India. \u201cNew Delhi\u201d is the term that most often appears in the datelines of news items and in reference to the government of India, both in India and in the rest of the world, in the same way as Washington, Beijing, and Moscow are used as metonyms for their respective countries. ... But, in a way, this would be like calling the capital of the United States \u201cCapitol Hill.\u201d The entire city of Delhi, moreover, is a Union Territory under the Indian constitution, officially known as the National Capital Territory of Delhi. This region is jointly administered by a local government and the central government of India. Central government buildings are concentrated in New Delhi and the central government government of India has paramount jurisdiction over these buildings\u2013thus over most of New Delhi. ... But the Indian constitution itself merely declares the capital to be the \u201cNational Capital Territory of Delhi\u201d (239AA), and subsequently refers to the area as Delhi throughout the document (similarly, in the Hindi version of the constitution, only \u0926\u093f\u0932\u094d\u0932\u0940 is used). For example, the Supreme Court of India is said in the constitution to sit in Delhi, rather than in New Delhi. ... So, based on the law and on tradition, should we continue to refer to the capital of India as New Delhi, or just Delhi?",
+            "relevance_score": 0.62,
+            "evidence_label": "NOT_ENOUGH_INFO"
+          },
+          {
+            "source": "timesofindia.indiatimes.com",
+            "text": "Delhi, the National Capital Territory, encompasses a vast historic region with multiple districts. New Delhi, a planned administrative district within Delhi, was designed by British architects as the nation's governance hub. While often used interchangeably, understanding their distinct roles is crucial for governance and official matters. ... When people talk about India\u2019s capital, they often say \u201cDelhi\u201d or \u201cNew Delhi\u201d - sometimes interchangeably. In casual conversation, it may seem like they mean the same place. But technically, there is a difference. So the region known as Delhi has been inhabited for many centuries, as a seat of power across many empires. Meanwhile, New Delhi was conceived under British colonial rule as a new seat of governance. The foundation stone of New Delhi, south of central Delhi, was laid during the Delhi Durbar of 1911. It was designed by British architects Edwin Lutyens and Herbert Baker, and formally inaugurated in 1931.To understand this easily: ... Did you know that Delhi is a Union Territory? Officially known as the National Capital Territory of Delhi (NCT), this is a union territory with a legislature, and covers multiple districts (11 official districts as per recent demarcation). NCT of Delhi comprises residential, commercial, historic, cultural, and institutional zones. ... Lutyens ... Understanding the distinction is more than just semantics, it has practical implications. When it comes to governance and services, knowing whether one is in the jurisdiction of municipal vs central bodies can affect service delivery, permits, etc. In real estate and zoning, some zones under New Delhi have special zoning rules, diplomatic status, etc. And when it comes to addressing and official representation, for official documents, permits or signage, using the correct name can matter greatly.Next time when you hear someone say \u201cI live in Delhi\u201d it could mean any part of the NCT of Delhi, whether in the New Delhi district or in the many other districts (South Delhi, West Delhi, etc.). Similarly, if someone says \u201cI\u2019m going to New Delhi\u201d they often mean the central government zone, the political heart, or as tourists call it the \u201ccapital area\u201d.In short: yes, there is a difference between \u201cDelhi\u201d and \u201cNew Delhi\u201d. While the two names are often used casually as though they were the same city, formally Delhi refers to the expansive National Capital Territory, a union territory combining multiple districts, portfolios of local, state-level and central governance. Whereas New Delhi refers specifically to the capital district within that territory, the administrative and diplomatic heart of India.Next, do you want a deep dive on Old Delhi?",
+            "relevance_score": 0.62,
+            "evidence_label": "SUPPORTS"
+          },
+          {
+            "source": "geeksforgeeks.org",
+            "text": "Delhi and New Delhi: Delhi is one of the union territories of India with a legislature. Officially, it is called the National Capital Territory of Delhi (NCT). It's a city and a union territory of India. The British declared Delhi as its capital in 1911. Delhi is located on the west bank of the Yamuna. New Delhi is the capital of India. It is located in the north-central part of the country and it is adjacent to and just south of Delhi (Old Delhi). ... | Aspect | Delhi | New Delhi | | --- | --- | --- | | Location | Located in the northern part of India, bordered by the states of Haryana and Uttar Pradesh | A district within the National Capital Territory of Delhi, the capital of India | ... | Governance | Serves as the capital city of India, as well as the administrative center of the National Capital Territory of Delhi | A planned city and district within Delhi, specifically designed to serve as the administrative and diplomatic center of British India, now the capital of India | ... The Indian constitution merely declares the capital to be the \u201cNational Capital Territory of Delhi\u201d under Article 239AA and subsequently refers to the area as Delhi throughout the document. For example, the Supreme Court of India is said in the constitution to sit in Delhi rather than in New Delhi. ... The name \"New Delhi\" was given in 1927, and the new capital was inaugurated on 13 February 1931. ... In 1911, it was announced that the capital of British-held territories in India was to be transferred from Calcutta to Delhi. This formally transferred on 12 December 1911. The name \"New Delhi\" was given in 1927, and the new capital was inaugurated on 13 February 1931 ... New Delhi was officially declared as the capital of the Union of India after the country gained independence on 15 August 1947.has expanded since; the small part of it that was constructed during the British period has come to be informally known as Lutyens' Delhi.",
+            "relevance_score": 0.62,
+            "evidence_label": "SUPPORTS"
+          }
+        ],
+        "disclaimer": "This system supports misinformation risk analysis but should not be treated as the final authority on truth. Retrieved evidence and SLM-assisted verification are supporting signals and should be interpreted with human judgment.",
+        "inference_mode": "slm_assisted_hybrid",
+        "model_used": "Fine-tuned DistilBERT 512",
+        "raw_class": 0,
+        "class_probabilities": {
+          "real": 0.6298,
+          "fake": 0.3702
+        },
+        "evidence_summary": {
+          "retrieved_count": 5,
+          "usable_evidence_count": 5,
+          "weak_evidence_count": 0,
+          "supports_count": 3,
+          "refutes_count": 0,
+          "not_enough_info_count": 2,
+          "unknown_count": 0,
+          "strong_supports_count": 0,
+          "strong_refutes_count": 0,
+          "support_max_relevance": 0.628,
+          "refute_max_relevance": 0.0,
+          "not_enough_info_max_relevance": 0.62,
+          "top_evidence_label": "SUPPORTS",
+          "top_relevance_score": 0.628,
+          "minimum_relevance_required": 0.5,
+          "strong_evidence_relevance_required": 0.65,
+          "minimum_aligned_evidence_count": 2,
+          "has_strong_support": false,
+          "has_strong_refute": false
+        },
+        "slm_verification": {
+          "enabled": true,
+          "used": true,
+          "provider": "lmstudio",
+          "model": "qwen/qwen3.5-9b",
+          "stance": "SUPPORTS",
+          "confidence": 1.0,
+          "reason": "Evidence explicitly states New Delhi is the national capital of India.",
+          "used_evidence_indices": [
+            1,
+            2
+          ],
+          "error": null
+        }
+      }
+    },
+    {
+      "case_id": "SMOKE04_MUMBAI_CAPITAL",
+      "status": "passed",
+      "input_text": "Mumbai is the capital of India.",
+      "inference_mode": "slm_assisted_hybrid",
+      "actual_label": "Likely Fake",
+      "actual_risk_label": "Medium Risk",
+      "slm_verification": {
+        "enabled": true,
+        "used": true,
+        "provider": "lmstudio",
+        "model": "qwen/qwen3.5-9b",
+        "stance": "REFUTES",
+        "confidence": 0.95,
+        "reason": "Evidence states Mumbai is capital of Maharashtra, not India.",
+        "used_evidence_indices": [
+          1,
+          2,
+          3
+        ],
+        "error": null
+      },
+      "checks": {
+        "label_ok": true,
+        "risk_ok": true,
+        "slm_used_ok": true,
+        "slm_stance_ok": true,
+        "not_label_ok": true
+      },
+      "result": {
+        "input_text": "Mumbai is the capital of India.",
+        "input_type": "claim",
+        "predicted_label": "Likely Fake",
+        "confidence_score": 0.5905,
+        "risk_score": 0.65,
+        "risk_label": "Medium Risk",
+        "explanation": "The final label is 'Likely Fake'. The classifier label was 'Likely Real' with confidence 0.5905. The current risk level is 'Medium Risk'. This prediction was generated using the Fine-tuned DistilBERT 512. At this stage, the classifier found patterns closer to real-news articles seen in the ISOT training dataset. The final label was produced by combining the classifier output with the retrieved evidence quality. The retrieved evidence summary contains 4 usable SUPPORTS, 0 usable REFUTES, and 1 usable NOT_ENOUGH_INFO items. There are 5 usable evidence items and 0 weak matches. The top evidence relevance score is 0.62. Displayed terms are simple content terms for review. Transformer-specific attribution can be added later using SHAP or attention-based analysis. The SLM-assisted verifier reviewed the retrieved evidence and returned stance 'REFUTES' with confidence 0.95. Verifier reason: Evidence states Mumbai is capital of Maharashtra, not India. The final result should be treated as a misinformation risk assessment, not as absolute truth.",
+        "influential_terms": [
+          "mumbai",
+          "capital",
+          "india"
+        ],
+        "evidence": [
+          {
+            "source": "mumbaicity.gov.in",
+            "text": "Mumbai (also known as Bombay, the official name until 1995) is the capital city of the Indian state of Maharashtra. ... a deep natural ... 2008, Mumbai was named ... The seven islands that came to constitute Mumbai were home to communities of fishing colonies of the Koli people. For centuries, the islands were under the control of successive indigenous empires before being ceded to the Portuguese Empire and subsequently to the East India Company when in 1661 Charles II of England married Catherine of Braganza and as part of her dowry Charles received the ports of Tangier and Seven Islands of Bombay. During the mid-18th century, Bombay was reshaped by the Hornby Vellard project, which undertook reclamation of the area between the seven islands from the sea. Along with construction of major roads and railways, the reclamation project, completed in 1845, transformed Bombay into a major seaport on the Arabian Sea. Bombay in the 19th century was characterised by economic and educational development. During the early 20th century it became a strong base for the Indian independence movement. Upon India\u2019s independence in 1947 the city was incorporated into Bombay State. In 1960, following the Samyukta Maharashtra Movement, a new state of Maharashtra was created with Bombay as the capital.",
+            "relevance_score": 0.62,
+            "evidence_label": "SUPPORTS"
+          },
+          {
+            "source": "mumbaicity.gov.in",
+            "text": "Mumbai (also known as Bombay, the official name until 1995) is the capital city of the Indian state of Maharashtra. ... Mumbai lies on the Konkan coast on the west coast of India and has a deep natural harbour. In 2008, Mumbai was named an alpha world city. It is also the wealthiest city in India, and has the highest number of millionaires and billionaires among all cities in India.",
+            "relevance_score": 0.62,
+            "evidence_label": "SUPPORTS"
+          },
+          {
+            "source": "en.wikipedia.org",
+            "text": "Mumbai (/m\u028am\u02c8ba\u026a/ muum-BY; Marathi: Mumba\u012b, pronounced [\u02c8mumb\u0259i]\u24d8), also known as Bombay (/b\u0252m\u02c8be\u026a/ bom-BAY; its official name until 1995), is the capital city of the Indian state of Maharashtra. Mumbai is the financial capital and the most populous city proper of India, with an estimated population of 12.5 million (1.25 crore). Mumbai is the centre of the Mumbai Metropolitan Region, which is among the most populous metropolitan areas in the world with a population of over 23 million (2.3 crore). Mumbai lies on the Konkan coast on the west coast of India and has a deep natural harbour. In 2008, Mumbai was named an alpha world city. Mumbai has the highest number of billionaires of any city in Asia. ... Mumbai is the financial, commercial, and entertainment capital of India. Mumbai is often compared to New York City, and is home to the Bombay Stock Exchange, situated on Dalal Street. It is also one of the world's top ten centres of commerce in terms of global financial flow, generating 6.16% of India's GDP, and accounting for 25% of the nation's industrial output, 70% of maritime trade in India (via Mumbai Port, Jawaharlal Nehru Port and Dharamtar Port), and 70% of capital transactions to India's economy. The city houses important financial institutions and the corporate headquarters of numerous Indian companies and multinational corporations. The city is also home to some of India's premier scientific and nuclear institutes and the Hindi and Marathi film industries. Mumbai is also the home of Bollywood, also known as Hindi cinema or Bombay cinema, which is considered to be the second-largest film industry after Hollywood. Mumbai's business opportunities attract migrants from all over India. ... In the 21st century, ... has become the commercial capital of India and a global financial hub. ... the home of India's main financial services companies and a focus for infrastructure development and private investment. ... has become one of South Asia's largest ... Mumbai is known as the financial and commercial capital of India, generating about 6.16% of the country's total GDP. In 2023\u201324, it contributed to 19.8% of the GDP of the state of Maharashtra. In 2017\u201318, estimates of the economy of the Mumbai Metropolitan Region ranged from $368 billion to $400 billion (PPP& metro GDP), ranking it amongst the top two most-productive metro area of India. In 2006, Mumbai employed 10% of the nation's factory workforce, contributed to 25% of the industrial output, 33% of the income tax collections, 60% of the customs duty collections, 20% of the central excise tax collections, 40% of the foreign trade, and generated \u20b940 billion(equivalent to \u20b9130 billion or US$1.3 billion in 2023) in corporate tax",
+            "relevance_score": 0.62,
+            "evidence_label": "SUPPORTS"
+          },
+          {
+            "source": "dm.mcgm.gov.in",
+            "text": "1.1.Physical Environment 1.1.1. Physical Description Mumbai stakes its claim as the biggest metropolitan city in India in terms of population size and economy it generates. Located in the western coast facing the Arabian Sea (Figure 1), the city, which serves as an important seaport and trade hub, is also the financial nerve-centre of the country. This capital city of the state of Maharashtra was once made up of seven small islands, which over the centuries got connected through natural and man-made land reclamations. Today, it is a narrow strip of island that abuts the coastal belt of Konkan, ... 1.1.2. Location Mumbai is located in the western seaboard of India at coordinates 18.96\u00b0 North 72.82\u00b0 East. A major part of Mumbai sits on the old island of Salsette which lies at the mouth of Ulhas River. Usually, Mumbai is referred to as three different geographic entities: Mumbai City, Greater Mumbai, and Mumbai Metropolitan Region (Figure 2). Mumbai City is the core of the old port city of Mumbai during the colonial period. Since then, its territory has expanded northward to cover the suburbs and extended suburbs. The Mumbai Island City plus the Mumbai Suburban District comprise what is now called as Greater Mumbai. It is under the political administration of the Municipal Corporation of Greater Mumbai (MCGM, formerly ... 1.2.12. Independence Before the country attained independence on August 15, 1947, Bombay witnessed the rise of the Indian National Congress, the non-violent civil disobedience and Quit India campaigns. The architect of these movements, Mahatma Gandhi, was its frequent visitor (Lonely planet, 2010). Soon after independence, Bombay also witnessed a change in its territorial make-up. Bombay was declared the capital of Bombay State. Three years later, the Greater Bombay District was created as a merger of the Bombay Suburbs and the city of Bombay (www. mumbaisuburban.gov.in). In 1960, there was a reorganization of the states. The Bombay State was divided along linguistic lines into State of Gujarat and State of Maharashtra, with the latter having Bombay as its capital (Keay, 2000). To plan and coordinate development not only with Bombay, but also the rapidly growing neighboring local government units, the Bombay Metropolitan Region Development Authority was established in 1975 under the auspices of the State of Maharashtra (MMRDA, 2010). In 1995, Bombay was renamed Mumbai after the Koli stone goddess Mumbadevi.",
+            "relevance_score": 0.62,
+            "evidence_label": "NOT_ENOUGH_INFO"
+          },
+          {
+            "source": "en.wikipedia.org",
+            "text": "Mumbai (/m\u028am\u02c8ba\u026a/ muum-BY; Marathi: Mumba\u012b, pronounced [\u02c8mumb\u0259i]\u24d8), also known as Bombay (/b\u0252m\u02c8be\u026a/ bom-BAY; its official name until 1995), is the capital city of the Indian state of Maharashtra. Mumbai is the financial capital and the most populous city proper of India, with an estimated population of 12.5 million (1.25 crore). Mumbai is the centre of the Mumbai Metropolitan Region, which is among the most populous metropolitan areas in the world with a population of over 23 million (2.3 crore). Mumbai lies on the Konkan coast on the west coast of India and has a deep natural harbour. In 2008, Mumbai was named an alpha world city. Mumbai has the highest number of billionaires of any city in Asia. ... Mumbai is the financial, commercial, and entertainment capital of India. Mumbai is often compared to New York City, and is home to the Bombay Stock Exchange, situated on Dalal Street. It is also one of the world's top ten centres of commerce in terms of global financial flow, generating 6.16% of India's GDP, and accounting for 25% of the nation's industrial output, 70% of maritime trade in India (via Mumbai Port, Jawaharlal Nehru Port and Dharamtar Port), and 70% of capital transactions to India's economy. The city houses important financial institutions and the corporate headquarters of numerous Indian companies and multinational corporations. The city is also home to some of India's premier scientific and nuclear institutes and the Hindi and Marathi film industries. Mumbai is also the home of Bollywood, also known as Hindi cinema or Bombay cinema, which is considered to be the second-largest film industry after Hollywood. Mumbai's business opportunities attract migrants from all over India. ... In the 21st century, Mumbai has become the commercial capital of India and a global financial hub. It ... the home of India's main financial services companies and a focus for infrastructure development and private investment. ... world's most ... film industry. ... Mumbai is known as the financial and commercial capital of India, generating about 6.16% of the country's total GDP. In 2023\u201324, it contributed to 19.8% of the GDP of the state of Maharashtra. In 2017\u201318, estimates of the economy of the Mumbai Metropolitan Region ranged from $368 billion to $400 billion (PPP& metro GDP), ranking it amongst the top two most-productive metro area of India. In 2006, Mumbai employed 10% of the nation's factory workforce, contributed to 25% of the industrial output, 33% of the income tax collections, 60% of the customs duty collections, 20% of the central excise tax collections, 40% of the foreign trade, and generated \u20b940 billion(equivalent to \u20b9130 billion or US$1.3 billion in 2023) in corporate tax",
+            "relevance_score": 0.62,
+            "evidence_label": "SUPPORTS"
+          }
+        ],
+        "disclaimer": "This system supports misinformation risk analysis but should not be treated as the final authority on truth. Retrieved evidence and SLM-assisted verification are supporting signals and should be interpreted with human judgment.",
+        "inference_mode": "slm_assisted_hybrid",
+        "model_used": "Fine-tuned DistilBERT 512",
+        "raw_class": 0,
+        "class_probabilities": {
+          "real": 0.5905,
+          "fake": 0.4095
+        },
+        "evidence_summary": {
+          "retrieved_count": 5,
+          "usable_evidence_count": 5,
+          "weak_evidence_count": 0,
+          "supports_count": 4,
+          "refutes_count": 0,
+          "not_enough_info_count": 1,
+          "unknown_count": 0,
+          "strong_supports_count": 0,
+          "strong_refutes_count": 0,
+          "support_max_relevance": 0.62,
+          "refute_max_relevance": 0.0,
+          "not_enough_info_max_relevance": 0.62,
+          "top_evidence_label": "SUPPORTS",
+          "top_relevance_score": 0.62,
+          "minimum_relevance_required": 0.5,
+          "strong_evidence_relevance_required": 0.65,
+          "minimum_aligned_evidence_count": 2,
+          "has_strong_support": false,
+          "has_strong_refute": false
+        },
+        "slm_verification": {
+          "enabled": true,
+          "used": true,
+          "provider": "lmstudio",
+          "model": "qwen/qwen3.5-9b",
+          "stance": "REFUTES",
+          "confidence": 0.95,
+          "reason": "Evidence states Mumbai is capital of Maharashtra, not India.",
+          "used_evidence_indices": [
+            1,
+            2,
+            3
+          ],
+          "error": null
+        }
+      }
+    },
+    {
+      "case_id": "SMOKE05_COVID_MICROCHIP",
+      "status": "passed",
+      "input_text": "COVID-19 vaccines contain microchips used to track people.",
+      "inference_mode": "slm_assisted_hybrid",
+      "actual_label": "Likely Fake",
+      "actual_risk_label": "High Risk",
+      "slm_verification": {
+        "enabled": true,
+        "used": true,
+        "provider": "lmstudio",
+        "model": "qwen/qwen3.5-9b",
+        "stance": "REFUTES",
+        "confidence": 0.95,
+        "reason": "Evidence states vaccines contain no microchips and cannot track people.",
+        "used_evidence_indices": [
+          1,
+          2
+        ],
+        "error": null
+      },
+      "checks": {
+        "label_ok": true,
+        "risk_ok": true,
+        "slm_used_ok": true,
+        "slm_stance_ok": true,
+        "not_label_ok": true
+      },
+      "result": {
+        "input_text": "COVID-19 vaccines contain microchips used to track people.",
+        "input_type": "claim",
+        "predicted_label": "Likely Fake",
+        "confidence_score": 0.9979,
+        "risk_score": 0.8,
+        "risk_label": "High Risk",
+        "explanation": "The final label is 'Likely Fake'. The classifier label was 'Likely Fake' with confidence 0.9979. The current risk level is 'High Risk'. This prediction was generated using the Fine-tuned DistilBERT 512. At this stage, the classifier found patterns closer to fake-news articles seen in the ISOT training dataset. The evidence-aware decision layer found more usable REFUTES evidence than SUPPORTS evidence, so the final label was marked Likely Fake. The retrieved evidence summary contains 0 usable SUPPORTS, 3 usable REFUTES, and 2 usable NOT_ENOUGH_INFO items. There are 5 usable evidence items and 0 weak matches. The top evidence relevance score is 0.8029. Displayed terms are simple content terms for review. Transformer-specific attribution can be added later using SHAP or attention-based analysis. The SLM-assisted verifier reviewed the retrieved evidence and returned stance 'REFUTES' with confidence 0.95. Verifier reason: Evidence states vaccines contain no microchips and cannot track people. The final result should be treated as a misinformation risk assessment, not as absolute truth.",
+        "influential_terms": [
+          "covid-19",
+          "vaccines",
+          "contain",
+          "microchips",
+          "used",
+          "track",
+          "people"
+        ],
+        "evidence": [
+          {
+            "source": "paho.org",
+            "text": "Truth: It is impossible for vaccines to track people. Explanation Absolutely no vaccines \u2013 including the vaccines against COVID-19 \u2013 contain any microchips, including ones that would let governments or any other entities in power track people. Remember: Vaccines are developed and used to keep people healthy, not to track them. Myth: Vaccines contain microchips that can track people.",
+            "relevance_score": 0.8029,
+            "evidence_label": "REFUTES"
+          },
+          {
+            "source": "factcheck.org",
+            "text": "A video circulating on social media falsely claims that vaccines for COVID-19 have a microchip that \u201ctracks the location of the patient.\u201d The chip, which is not currently in use, would be attached to the end of a plastic vial and provide information only about the vaccine dose. In the interview, Walker explained that his company had received a federal contract to ramp up production of its prefilled syringes so that they would be available for use in administering either vaccines or therapeutics for COVID-19. The syringes can also be made with an optional chip that could be attached to the end of the plastic vial to store information about its contents. The chip is an RFID tag, which is short for radio frequency identification, and requires a device to scan and read the data. It\u2019s unclear how that would even work, though, since the RFID tag is attached to the vial and can\u2019t be injected into a patient.",
+            "relevance_score": 0.7605,
+            "evidence_label": "REFUTES"
+          },
+          {
+            "source": "LIAR2 Enhanced | hal turner radio show | health care;public health;facebook fact-checks;coronavirus",
+            "text": "Claim: People with the COVID-19 vaccine are being \"tracked in real time via 5G cellular, and all that data can be hacked into to track you.. Fact-check rating: pants-fire. Speaker or source: hal turner radio show. Subject: health care;public health;facebook fact-checks;coronavirus. Date: May 20, 2021. Context: a blog post. Justification: Turner posted a video on his website that claims to show a Russian hacker accessing information from a microchip that was injected into someone when they received a COVID-19 vaccination. That information can be used to track someone\u2019s movements. There is no that any of the COVID-19 vaccines currently in use contain microchips or any ingredients with networking capabilities that allow people to be tracked. Similar claims about the vaccines have been debunked in the past. We rate this !",
+            "relevance_score": 0.7126,
+            "evidence_label": "NOT_ENOUGH_INFO"
+          },
+          {
+            "source": "covid19.gov.im",
+            "text": "# Vaccine misinformation. ## \u200bTypes of misinformation. There are different types of vaccine misinformation that are false or claims about safety, efficacy, ingredients, side effects and purpose. * False claims that the COVID vaccination contains 'microchips' that can be used to track and control people. * False claims that the vaccine causes infertility. * False claims that the vaccine will alter human DNA. * False claims that the pharmaceutical industry has fabricated the results of vaccine trials or covered up harmful side effects to boost its profits. The main source of vaccine misinformation is coming from social media. Misinformation can easily spread and be amplified by social media algorithms deepening on engagement rates. Social media companies have taken various steps to tackle misinformation on their platforms during the COVID-19 pandemic. There are a few things you can do to check if information is reliable or not:. If you have any questions about our vaccine programme, you can call the helpline for the most reliable information.",
+            "relevance_score": 0.74,
+            "evidence_label": "REFUTES"
+          },
+          {
+            "source": "LIAR2 Enhanced | viral image | public health;technology;privacy issues;facebook fact-checks;coronavirus",
+            "text": "Claim: Says COVID-19 vaccines have \"experimental technology never before used on humans\" and that some \"contain nanochips which can electronically track recipients.. Fact-check rating: false. Speaker or source: viral image. Subject: public health;technology;privacy issues;facebook fact-checks;coronavirus. Date: December 29, 2020. Context: a Facebook post. Justification: An image shared on Facebook claimed COVID-19 vaccines have \"experimental technology never before used on humans\" and that some \"contain nanochips which can electronically track recipients.\" The technology is new, but it was tested on humans. The vaccines don\u2019t contain chips for tracking. We rate the image .",
+            "relevance_score": 0.6935,
+            "evidence_label": "NOT_ENOUGH_INFO"
+          }
+        ],
+        "disclaimer": "This system supports misinformation risk analysis but should not be treated as the final authority on truth. Retrieved evidence and SLM-assisted verification are supporting signals and should be interpreted with human judgment.",
+        "inference_mode": "slm_assisted_hybrid",
+        "model_used": "Fine-tuned DistilBERT 512",
+        "raw_class": 1,
+        "class_probabilities": {
+          "real": 0.0021,
+          "fake": 0.9979
+        },
+        "evidence_summary": {
+          "retrieved_count": 5,
+          "usable_evidence_count": 5,
+          "weak_evidence_count": 0,
+          "supports_count": 0,
+          "refutes_count": 3,
+          "not_enough_info_count": 2,
+          "unknown_count": 0,
+          "strong_supports_count": 0,
+          "strong_refutes_count": 3,
+          "support_max_relevance": 0.0,
+          "refute_max_relevance": 0.8029,
+          "not_enough_info_max_relevance": 0.7126,
+          "top_evidence_label": "REFUTES",
+          "top_relevance_score": 0.8029,
+          "minimum_relevance_required": 0.5,
+          "strong_evidence_relevance_required": 0.65,
+          "minimum_aligned_evidence_count": 2,
+          "has_strong_support": false,
+          "has_strong_refute": true
+        },
+        "slm_verification": {
+          "enabled": true,
+          "used": true,
+          "provider": "lmstudio",
+          "model": "qwen/qwen3.5-9b",
+          "stance": "REFUTES",
+          "confidence": 0.95,
+          "reason": "Evidence states vaccines contain no microchips and cannot track people.",
+          "used_evidence_indices": [
+            1,
+            2
+          ],
+          "error": null
+        }
+      }
+    },
+    {
+      "case_id": "SMOKE06_TRADITIONAL_LR_AVAILABLE",
+      "status": "passed",
+      "input_text": "The Eiffel Tower is located in Paris.",
+      "inference_mode": "traditional_lr",
+      "actual_label": "Likely Fake",
+      "actual_risk_label": "Medium Risk",
+      "slm_verification": {},
+      "checks": {
+        "label_ok": true,
+        "risk_ok": true,
+        "slm_used_ok": true,
+        "slm_stance_ok": true,
+        "not_label_ok": true
+      },
+      "result": {
+        "input_text": "The Eiffel Tower is located in Paris.",
+        "input_type": "claim",
+        "predicted_label": "Likely Fake",
+        "confidence_score": 0.5639,
+        "risk_score": 0.5639,
+        "risk_label": "Medium Risk",
+        "explanation": "The final label is 'Likely Fake'. The classifier label was 'Likely Fake' with confidence 0.5639. The current risk level is 'Medium Risk'. This prediction was generated using the TF-IDF + Logistic Regression. At this stage, the classifier found patterns closer to fake-news articles seen in the ISOT training dataset. The final label was produced by combining the classifier output with the retrieved evidence quality. The retrieved evidence summary contains 0 usable SUPPORTS, 0 usable REFUTES, and 0 usable NOT_ENOUGH_INFO items. There are 0 usable evidence items and 0 weak matches. The top evidence relevance score is 0.0. Displayed terms are simple content terms for review. Transformer-specific attribution can be added later using SHAP or attention-based analysis. This mode is classifier-only, so the result should be read as a model prediction rather than evidence-verified truth. The final result should be treated as a misinformation risk assessment, not as absolute truth.",
+        "influential_terms": [
+          "eiffel",
+          "tower",
+          "located",
+          "paris"
+        ],
+        "evidence": [],
+        "disclaimer": "This system supports misinformation risk analysis but should not be treated as the final authority on truth. Retrieved evidence and SLM-assisted verification are supporting signals and should be interpreted with human judgment.",
+        "inference_mode": "traditional_lr",
+        "model_used": "TF-IDF + Logistic Regression",
+        "raw_class": 1,
+        "class_probabilities": {
+          "real": 0.4361,
+          "fake": 0.5639
+        },
+        "evidence_summary": {
+          "retrieved_count": 0,
+          "usable_evidence_count": 0,
+          "weak_evidence_count": 0,
+          "supports_count": 0,
+          "refutes_count": 0,
+          "not_enough_info_count": 0,
+          "unknown_count": 0,
+          "top_evidence_label": "NONE",
+          "top_relevance_score": 0.0,
+          "minimum_relevance_required": 0.0,
+          "strong_evidence_relevance_required": 0.0,
+          "has_strong_support": false,
+          "has_strong_refute": false
+        },
+        "slm_verification": null
+      }
+    }
+  ]
+}

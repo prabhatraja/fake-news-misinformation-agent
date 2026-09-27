@@ -1,0 +1,290 @@
+{
+  "timestamp": "2026-09-21T20:43:22",
+  "base_url": "http://127.0.0.1:8000",
+  "mode": "slm_assisted_hybrid",
+  "total": 12,
+  "passed": 11,
+  "review": 1,
+  "directional_accuracy": 0.9167,
+  "coherent": 12,
+  "coherence_rate": 1.0,
+  "results": [
+    {
+      "name": "taj_true",
+      "claim": "The Taj Mahal is located in Agra, Uttar Pradesh.",
+      "expected": [
+        "Likely Real"
+      ],
+      "actual": "Likely Real",
+      "passed": true,
+      "risk": "Low Risk",
+      "evidence_verdict": "Supports Claim",
+      "evidence_quality": "Moderate",
+      "slm_stance": "SUPPORTS",
+      "coherence_ok": true,
+      "coherence_reasons": [],
+      "evidence_labels": [
+        "SUPPORTS",
+        "SUPPORTS",
+        "SUPPORTS",
+        "SUPPORTS",
+        "SUPPORTS"
+      ],
+      "why": "The retrieved evidence supports the claim. Multiple high-trust evidence snippets explicitly state the Taj Mahal is located in Agra, Uttar Pradesh (Evidence 3, Evidence 5), directly supporting the claim."
+    },
+    {
+      "name": "taj_false",
+      "claim": "The Taj Mahal is located in Jaipur, Rajasthan.",
+      "expected": [
+        "Likely Fake"
+      ],
+      "actual": "Likely Fake",
+      "passed": true,
+      "risk": "High Risk",
+      "evidence_verdict": "Contradicts Claim",
+      "evidence_quality": "Moderate",
+      "slm_stance": "REFUTES",
+      "coherence_ok": true,
+      "coherence_reasons": [],
+      "evidence_labels": [
+        "NOT_ENOUGH_INFO",
+        "REFUTES",
+        "REFUTES",
+        "REFUTES",
+        "REFUTES"
+      ],
+      "why": "The retrieved evidence contradicts the claim. Multiple high-trust evidence snippets (Evidence 2, Evidence 4, Evidence 5) explicitly state the Taj Mahal is located in Agra, Uttar Pradesh. The claim states it is in Jaipur, Rajasthan. This is a direct material contradiction regarding the location."
+    },
+    {
+      "name": "chandrayaan_true",
+      "claim": "Chandrayaan-3 successfully soft-landed on the Moon in August 2023.",
+      "expected": [
+        "Likely Real"
+      ],
+      "actual": "Likely Real",
+      "passed": true,
+      "risk": "Low Risk",
+      "evidence_verdict": "Supports Claim",
+      "evidence_quality": "Strong",
+      "slm_stance": "SUPPORTS",
+      "coherence_ok": true,
+      "coherence_reasons": [],
+      "evidence_labels": [
+        "SUPPORTS",
+        "SUPPORTS",
+        "SUPPORTS",
+        "SUPPORTS",
+        "NOT_ENOUGH_INFO"
+      ],
+      "why": "The retrieved evidence supports the claim. Multiple high-trust evidence snippets (Wikipedia, ESA, India TV News) explicitly state that Chandrayaan-3 successfully soft-landed on the Moon on August 23, 2023, near the south pole. Evidence 5 provides context regarding pre-landing expectations but does not contradict the eventual successful outcome described in other snippets."
+    },
+    {
+      "name": "chandrayaan_false",
+      "claim": "Chandrayaan-3 landed on Mars in August 2023.",
+      "expected": [
+        "Likely Fake"
+      ],
+      "actual": "Likely Fake",
+      "passed": true,
+      "risk": "High Risk",
+      "evidence_verdict": "Contradicts Claim",
+      "evidence_quality": "Moderate",
+      "slm_stance": "REFUTES",
+      "coherence_ok": true,
+      "coherence_reasons": [],
+      "evidence_labels": [
+        "REFUTES",
+        "NOT_ENOUGH_INFO",
+        "NOT_ENOUGH_INFO",
+        "REFUTES",
+        "REFUTES"
+      ],
+      "why": "The retrieved evidence contradicts the claim. The evidence explicitly states that Chandrayaan-3 landed on the Moon (specifically near the south pole), whereas the claim asserts it landed on Mars. This is a direct contradiction of the destination entity."
+    },
+    {
+      "name": "australia_true",
+      "claim": "Canberra is the capital of Australia.",
+      "expected": [
+        "Likely Real"
+      ],
+      "actual": "Likely Real",
+      "passed": true,
+      "risk": "Low Risk",
+      "evidence_verdict": "Supports Claim",
+      "evidence_quality": "Strong",
+      "slm_stance": "SUPPORTS",
+      "coherence_ok": true,
+      "coherence_reasons": [],
+      "evidence_labels": [
+        "SUPPORTS",
+        "SUPPORTS",
+        "SUPPORTS",
+        "NOT_ENOUGH_INFO",
+        "REFUTES"
+      ],
+      "why": "The retrieved evidence supports the claim. Evidence 1 and Evidence 3 explicitly state that Canberra is the capital city of Australia, directly supporting the claim. Evidence 2 mentions 'Australia's capital city' in the context of a protest in Canberra, which is consistent with the claim. Evidence 4 discusses an image check regarding Canberra but does not contradict its status as the capital. Evidence 5 refutes a different claim about Perth and is irrelevant to the specific claim about Canberra."
+    },
+    {
+      "name": "australia_false",
+      "claim": "Sydney is the capital of Australia.",
+      "expected": [
+        "Likely Fake"
+      ],
+      "actual": "Uncertain",
+      "passed": false,
+      "risk": "Medium Risk",
+      "evidence_verdict": "Insufficient Evidence",
+      "evidence_quality": "Moderate",
+      "slm_stance": "NOT_ENOUGH_INFO",
+      "coherence_ok": true,
+      "coherence_reasons": [],
+      "evidence_labels": [
+        "NOT_ENOUGH_INFO",
+        "NOT_ENOUGH_INFO",
+        "NOT_ENOUGH_INFO",
+        "NOT_ENOUGH_INFO",
+        "NOT_ENOUGH_INFO"
+      ],
+      "why": "The retrieved evidence was not sufficient for a firm factual direction. The evidence confirms Sydney is the capital of New South Wales and Canberra is the national capital, but none of the snippets explicitly state that Sydney is the capital of Australia (the country). The claim requires establishing a specific relation between Sydney and Australia as a whole, which is not directly asserted in the provided text."
+    },
+    {
+      "name": "apollo_true",
+      "claim": "Apollo 11 landed humans on the Moon in 1969.",
+      "expected": [
+        "Likely Real"
+      ],
+      "actual": "Likely Real",
+      "passed": true,
+      "risk": "Low Risk",
+      "evidence_verdict": "Supports Claim",
+      "evidence_quality": "Strong",
+      "slm_stance": "SUPPORTS",
+      "coherence_ok": true,
+      "coherence_reasons": [],
+      "evidence_labels": [
+        "SUPPORTS",
+        "SUPPORTS",
+        "SUPPORTS",
+        "SUPPORTS",
+        "SUPPORTS"
+      ],
+      "why": "The retrieved evidence supports the claim. Multiple high-trust evidence snippets explicitly state that Apollo 11 launched on July 16, 1969, and that astronauts landed on the Moon (specifically citing July 20, 1969) and returned to Earth, directly supporting the claim."
+    },
+    {
+      "name": "apollo_false",
+      "claim": "Apollo 11 landed humans on Mars in 1969.",
+      "expected": [
+        "Likely Fake"
+      ],
+      "actual": "Likely Fake",
+      "passed": true,
+      "risk": "Medium Risk",
+      "evidence_verdict": "Contradicts Claim",
+      "evidence_quality": "Moderate",
+      "slm_stance": "REFUTES",
+      "coherence_ok": true,
+      "coherence_reasons": [],
+      "evidence_labels": [
+        "REFUTES",
+        "REFUTES",
+        "REFUTES",
+        "REFUTES",
+        "REFUTES"
+      ],
+      "why": "The retrieved evidence contradicts the claim. The evidence explicitly states that Apollo 11 landed on the Moon (Earth's natural satellite), whereas the claim asserts it landed on Mars. This is a direct material contradiction regarding the destination."
+    },
+    {
+      "name": "health_false",
+      "claim": "COVID-19 vaccines contain microchips used to track people.",
+      "expected": [
+        "Likely Fake"
+      ],
+      "actual": "Likely Fake",
+      "passed": true,
+      "risk": "High Risk",
+      "evidence_verdict": "Contradicts Claim",
+      "evidence_quality": "Strong",
+      "slm_stance": "REFUTES",
+      "coherence_ok": true,
+      "coherence_reasons": [],
+      "evidence_labels": [
+        "REFUTES",
+        "REFUTES",
+        "REFUTES",
+        "REFUTES",
+        "REFUTES"
+      ],
+      "why": "The retrieved evidence contradicts the claim. The evidence explicitly states that COVID-19 vaccines do not contain microchips or tracking devices, directly contradicting the claim."
+    },
+    {
+      "name": "football_false",
+      "claim": "India won the FIFA World Cup in 2022.",
+      "expected": [
+        "Likely Fake"
+      ],
+      "actual": "Likely Fake",
+      "passed": true,
+      "risk": "Medium Risk",
+      "evidence_verdict": "Contradicts Claim",
+      "evidence_quality": "Moderate",
+      "slm_stance": "REFUTES",
+      "coherence_ok": true,
+      "coherence_reasons": [],
+      "evidence_labels": [
+        "REFUTES",
+        "REFUTES",
+        "REFUTES",
+        "REFUTES",
+        "REFUTES"
+      ],
+      "why": "The retrieved evidence contradicts the claim. The evidence explicitly states that Argentina won the 2022 FIFA World Cup by defeating France in the final, directly contradicting the claim that India won."
+    },
+    {
+      "name": "everest_true",
+      "claim": "Mount Everest is the highest mountain above sea level.",
+      "expected": [
+        "Likely Real"
+      ],
+      "actual": "Likely Real",
+      "passed": true,
+      "risk": "Low Risk",
+      "evidence_verdict": "Supports Claim",
+      "evidence_quality": "Moderate",
+      "slm_stance": "SUPPORTS",
+      "coherence_ok": true,
+      "coherence_reasons": [],
+      "evidence_labels": [
+        "SUPPORTS",
+        "SUPPORTS",
+        "SUPPORTS",
+        "SUPPORTS",
+        "SUPPORTS"
+      ],
+      "why": "The retrieved evidence supports the claim. Multiple high-trust evidence snippets explicitly state that Mount Everest is the highest mountain above sea level and the highest point on Earth measured from mean sea level, directly supporting the claim."
+    },
+    {
+      "name": "weak_claim",
+      "claim": "Breaking shocking secret exposed by anonymous doctors and hidden media sources.",
+      "expected": [
+        "Misleading",
+        "Uncertain"
+      ],
+      "actual": "Uncertain",
+      "passed": true,
+      "risk": "Medium Risk",
+      "evidence_verdict": "Insufficient Evidence",
+      "evidence_quality": "Moderate",
+      "slm_stance": "NOT_ENOUGH_INFO",
+      "coherence_ok": true,
+      "coherence_reasons": [],
+      "evidence_labels": [
+        "NOT_ENOUGH_INFO",
+        "NOT_ENOUGH_INFO",
+        "NOT_ENOUGH_INFO",
+        "NOT_ENOUGH_INFO",
+        "NOT_ENOUGH_INFO"
+      ],
+      "why": "The retrieved evidence was not sufficient for a firm factual direction. The evidence discusses the Thirlwall Inquiry report regarding the Countess of Chester Hospital and Lucy Letby, but contains no mention of 'anonymous doctors', 'hidden media sources', or a 'shocking secret' being exposed by them. The claim's specific attribution and nature are not established by the provided text."
+    }
+  ]
+}

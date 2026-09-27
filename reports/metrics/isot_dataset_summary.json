@@ -1,0 +1,35 @@
+{
+    "dataset_name": "ISOT Fake News Dataset",
+    "total_records": 39100,
+    "train_records": 31280,
+    "test_records": 7820,
+    "label_distribution_total": {
+        "real": 21195,
+        "fake": 17905
+    },
+    "label_distribution_train": {
+        "real": 16956,
+        "fake": 14324
+    },
+    "label_distribution_test": {
+        "real": 4239,
+        "fake": 3581
+    },
+    "subject_distribution_total": {
+        "politicsNews": 11216,
+        "worldnews": 9979,
+        "News": 9050,
+        "politics": 6836,
+        "US_News": 783,
+        "left-news": 705,
+        "Government News": 531
+    },
+    "average_words_per_article": 410.46,
+    "median_words_per_article": 378.0,
+    "min_words_per_article": 2,
+    "max_words_per_article": 8148,
+    "label_mapping": {
+        "0": "real",
+        "1": "fake"
+    }
+}

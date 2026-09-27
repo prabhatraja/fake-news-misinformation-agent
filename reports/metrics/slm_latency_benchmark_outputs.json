@@ -1,0 +1,244 @@
+{
+  "generated_at": "2026-07-06T08:58:09.046459",
+  "api_url": "http://127.0.0.1:8000/api/v1/predict",
+  "test_type": "slm_assisted_hybrid_latency_benchmark",
+  "runs_per_case": 3,
+  "total_requests": 15,
+  "overall_latency": {
+    "avg_seconds": 2.227,
+    "min_seconds": 1.902,
+    "max_seconds": 2.587
+  },
+  "cases": [
+    {
+      "input_text": "The Eiffel Tower is located in Paris.",
+      "runs": [
+        {
+          "latency_seconds": 2.587,
+          "label": "Likely Real",
+          "risk_label": "Low Risk",
+          "model_used": "Fine-tuned DistilBERT 512",
+          "slm_model": "qwen/qwen3.5-9b",
+          "slm_used": true,
+          "slm_stance": "SUPPORTS",
+          "slm_confidence": 0.95,
+          "slm_error": null,
+          "run_id": 1
+        },
+        {
+          "latency_seconds": 2.15,
+          "label": "Likely Real",
+          "risk_label": "Low Risk",
+          "model_used": "Fine-tuned DistilBERT 512",
+          "slm_model": "qwen/qwen3.5-9b",
+          "slm_used": true,
+          "slm_stance": "SUPPORTS",
+          "slm_confidence": 0.95,
+          "slm_error": null,
+          "run_id": 2
+        },
+        {
+          "latency_seconds": 2.188,
+          "label": "Likely Real",
+          "risk_label": "Low Risk",
+          "model_used": "Fine-tuned DistilBERT 512",
+          "slm_model": "qwen/qwen3.5-9b",
+          "slm_used": true,
+          "slm_stance": "SUPPORTS",
+          "slm_confidence": 0.95,
+          "slm_error": null,
+          "run_id": 3
+        }
+      ],
+      "latency_summary": {
+        "avg_seconds": 2.308,
+        "min_seconds": 2.15,
+        "max_seconds": 2.587
+      }
+    },
+    {
+      "input_text": "The Eiffel Tower is located in Berlin.",
+      "runs": [
+        {
+          "latency_seconds": 2.354,
+          "label": "Likely Fake",
+          "risk_label": "Medium Risk",
+          "model_used": "Fine-tuned DistilBERT 512",
+          "slm_model": "qwen/qwen3.5-9b",
+          "slm_used": true,
+          "slm_stance": "REFUTES",
+          "slm_confidence": 0.95,
+          "slm_error": null,
+          "run_id": 1
+        },
+        {
+          "latency_seconds": 2.301,
+          "label": "Likely Fake",
+          "risk_label": "Medium Risk",
+          "model_used": "Fine-tuned DistilBERT 512",
+          "slm_model": "qwen/qwen3.5-9b",
+          "slm_used": true,
+          "slm_stance": "REFUTES",
+          "slm_confidence": 0.95,
+          "slm_error": null,
+          "run_id": 2
+        },
+        {
+          "latency_seconds": 2.407,
+          "label": "Likely Fake",
+          "risk_label": "Medium Risk",
+          "model_used": "Fine-tuned DistilBERT 512",
+          "slm_model": "qwen/qwen3.5-9b",
+          "slm_used": true,
+          "slm_stance": "REFUTES",
+          "slm_confidence": 0.95,
+          "slm_error": null,
+          "run_id": 3
+        }
+      ],
+      "latency_summary": {
+        "avg_seconds": 2.354,
+        "min_seconds": 2.301,
+        "max_seconds": 2.407
+      }
+    },
+    {
+      "input_text": "New Delhi is the capital of India.",
+      "runs": [
+        {
+          "latency_seconds": 2.28,
+          "label": "Likely Real",
+          "risk_label": "Low Risk",
+          "model_used": "Fine-tuned DistilBERT 512",
+          "slm_model": "qwen/qwen3.5-9b",
+          "slm_used": true,
+          "slm_stance": "SUPPORTS",
+          "slm_confidence": 1.0,
+          "slm_error": null,
+          "run_id": 1
+        },
+        {
+          "latency_seconds": 2.199,
+          "label": "Likely Real",
+          "risk_label": "Low Risk",
+          "model_used": "Fine-tuned DistilBERT 512",
+          "slm_model": "qwen/qwen3.5-9b",
+          "slm_used": true,
+          "slm_stance": "SUPPORTS",
+          "slm_confidence": 1.0,
+          "slm_error": null,
+          "run_id": 2
+        },
+        {
+          "latency_seconds": 2.212,
+          "label": "Likely Real",
+          "risk_label": "Low Risk",
+          "model_used": "Fine-tuned DistilBERT 512",
+          "slm_model": "qwen/qwen3.5-9b",
+          "slm_used": true,
+          "slm_stance": "SUPPORTS",
+          "slm_confidence": 1.0,
+          "slm_error": null,
+          "run_id": 3
+        }
+      ],
+      "latency_summary": {
+        "avg_seconds": 2.23,
+        "min_seconds": 2.199,
+        "max_seconds": 2.28
+      }
+    },
+    {
+      "input_text": "Mumbai is the capital of India.",
+      "runs": [
+        {
+          "latency_seconds": 2.394,
+          "label": "Likely Fake",
+          "risk_label": "Medium Risk",
+          "model_used": "Fine-tuned DistilBERT 512",
+          "slm_model": "qwen/qwen3.5-9b",
+          "slm_used": true,
+          "slm_stance": "REFUTES",
+          "slm_confidence": 0.95,
+          "slm_error": null,
+          "run_id": 1
+        },
+        {
+          "latency_seconds": 2.267,
+          "label": "Likely Fake",
+          "risk_label": "Medium Risk",
+          "model_used": "Fine-tuned DistilBERT 512",
+          "slm_model": "qwen/qwen3.5-9b",
+          "slm_used": true,
+          "slm_stance": "REFUTES",
+          "slm_confidence": 0.95,
+          "slm_error": null,
+          "run_id": 2
+        },
+        {
+          "latency_seconds": 2.197,
+          "label": "Likely Fake",
+          "risk_label": "Medium Risk",
+          "model_used": "Fine-tuned DistilBERT 512",
+          "slm_model": "qwen/qwen3.5-9b",
+          "slm_used": true,
+          "slm_stance": "REFUTES",
+          "slm_confidence": 0.95,
+          "slm_error": null,
+          "run_id": 3
+        }
+      ],
+      "latency_summary": {
+        "avg_seconds": 2.286,
+        "min_seconds": 2.197,
+        "max_seconds": 2.394
+      }
+    },
+    {
+      "input_text": "COVID-19 vaccines contain microchips used to track people.",
+      "runs": [
+        {
+          "latency_seconds": 2.07,
+          "label": "Likely Fake",
+          "risk_label": "High Risk",
+          "model_used": "Fine-tuned DistilBERT 512",
+          "slm_model": "qwen/qwen3.5-9b",
+          "slm_used": true,
+          "slm_stance": "REFUTES",
+          "slm_confidence": 0.95,
+          "slm_error": null,
+          "run_id": 1
+        },
+        {
+          "latency_seconds": 1.902,
+          "label": "Likely Fake",
+          "risk_label": "High Risk",
+          "model_used": "Fine-tuned DistilBERT 512",
+          "slm_model": "qwen/qwen3.5-9b",
+          "slm_used": true,
+          "slm_stance": "REFUTES",
+          "slm_confidence": 0.95,
+          "slm_error": null,
+          "run_id": 2
+        },
+        {
+          "latency_seconds": 1.902,
+          "label": "Likely Fake",
+          "risk_label": "High Risk",
+          "model_used": "Fine-tuned DistilBERT 512",
+          "slm_model": "qwen/qwen3.5-9b",
+          "slm_used": true,
+          "slm_stance": "REFUTES",
+          "slm_confidence": 0.95,
+          "slm_error": null,
+          "run_id": 3
+        }
+      ],
+      "latency_summary": {
+        "avg_seconds": 1.958,
+        "min_seconds": 1.902,
+        "max_seconds": 2.07
+      }
+    }
+  ]
+}

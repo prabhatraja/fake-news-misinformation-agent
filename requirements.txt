@@ -1,0 +1,32 @@
+# Core API / application
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+streamlit
+python-multipart
+
+# ML / NLP
+numpy
+pandas
+scikit-learn
+joblib
+torch
+transformers
+datasets
+sentence-transformers
+chromadb
+lime
+matplotlib
+
+# Evidence / web search
+requests
+tavily-python
+exa-py
+PyYAML
+
+# Extraction
+pypdf
+Pillow
+pytesseract
+youtube-transcript-api

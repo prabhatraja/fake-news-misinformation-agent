@@ -1,0 +1,50 @@
+{
+    "model_name": "distilbert-base-uncased",
+    "trained_model_path": "C:\\Prabhat\\PES\\Final Project\\fake-news-misinformation-agent\\models\\transformer\\distilbert_isot",
+    "generated_at": "2026-06-23T18:54:19.054800",
+    "accuracy": 0.9999,
+    "precision": 0.9997,
+    "recall": 1.0,
+    "f1_score": 0.9999,
+    "classification_report": {
+        "real": {
+            "precision": 1.0,
+            "recall": 0.9997640953054966,
+            "f1-score": 0.9998820337383508,
+            "support": 4239.0
+        },
+        "fake": {
+            "precision": 0.9997208263539922,
+            "recall": 1.0,
+            "f1-score": 0.9998603936897947,
+            "support": 3581.0
+        },
+        "accuracy": 0.9998721227621483,
+        "macro avg": {
+            "precision": 0.9998604131769961,
+            "recall": 0.9998820476527484,
+            "f1-score": 0.9998712137140728,
+            "support": 7820.0
+        },
+        "weighted avg": {
+            "precision": 0.9998721584621031,
+            "recall": 0.9998721227621483,
+            "f1-score": 0.9998721241457831,
+            "support": 7820.0
+        }
+    },
+    "confusion_matrix": [
+        [
+            4238,
+            1
+        ],
+        [
+            0,
+            3581
+        ]
+    ],
+    "label_mapping": {
+        "0": "real",
+        "1": "fake"
+    }
+}
