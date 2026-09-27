@@ -1,9 +1,22 @@
-# Secrets
-.env
+# =========================================================
+# Environment configuration
+#
+# .env and .env.example are intentionally committed
+# to this public repository with NO real secrets.
+#
+# Ignore other private/local environment variants.
+# =========================================================
 .env.*
 !.env.example
 
-# Python
+# NOTE:
+# .env itself is intentionally NOT ignored.
+# Keep the committed .env permanently sanitized.
+
+
+# =========================================================
+# Python cache / generated files
+# =========================================================
 __pycache__/
 *.py[cod]
 *.pyo
@@ -13,40 +26,114 @@ __pycache__/
 htmlcov/
 .ipynb_checkpoints/
 
+
+# =========================================================
 # Virtual environments
+# =========================================================
 .venv/
 venv/
 env/
 
-# IDE/editor
+
+# =========================================================
+# IDE / editor configuration
+# =========================================================
 .vscode/
 .idea/
 
-# OS
+
+# =========================================================
+# Operating system files
+# =========================================================
 .DS_Store
 Thumbs.db
+desktop.ini
 
-# Logs / temp / backups
+
+# =========================================================
+# Logs / temporary / backup files
+# =========================================================
 *.log
 *.tmp
 *.bak
+*.swp
+*.swo
+
 reports/megabatch*.txt
 
-# Development archive
+
+# =========================================================
+# Development/archive material
+# =========================================================
 archive/
 
-# Large raw/processed data and vector indexes
-data/raw/*
-data/processed/*
-data/embeddings/*
-!data/README.md
 
-# Large trained/local models
-models/baseline/*
-models/transformer/*
-models/embedding/*
-!models/README.md
-
-# Local model/server caches
+# =========================================================
+# Local model / library caches
+# =========================================================
 .cache/
 huggingface/
+
+
+# =========================================================
+# DATA
+#
+# Intentionally NOT ignored.
+#
+# The following are meant to be committed:
+#   data/raw/
+#   data/processed/
+#   data/embeddings/
+#
+# This includes the local FEVER and LIAR2 Chroma indexes.
+# =========================================================
+
+
+# =========================================================
+# BASELINE MODELS
+#
+# Intentionally NOT ignored.
+#
+# The following are meant to be committed:
+#   models/baseline/tfidf_vectorizer.joblib
+#   models/baseline/logistic_regression_model.joblib
+#   models/baseline/linear_svm_model.joblib
+# =========================================================
+
+
+# =========================================================
+# TRANSFORMER MODELS
+#
+# Keep the transformer directory structure in GitHub,
+# but do NOT commit the large trained model artifacts.
+#
+# The final DistilBERT 512 model will be hosted separately
+# on Hugging Face.
+# =========================================================
+
+# Ignore everything below models/transformer/
+models/transformer/**/*
+
+# Re-include transformer directories
+!models/transformer/**/
+
+# Re-include .gitkeep placeholders
+!models/transformer/**/.gitkeep
+
+
+# =========================================================
+# THIRD-PARTY EMBEDDING MODEL
+#
+# sentence-transformers/all-MiniLM-L6-v2 is already
+# publicly available from Hugging Face.
+#
+# Do not duplicate the local model files in this repository.
+# =========================================================
+models/embedding/**
+
+
+# =========================================================
+# Documentation inside model/data folders
+# =========================================================
+!models/README.md
+!data/README.md
